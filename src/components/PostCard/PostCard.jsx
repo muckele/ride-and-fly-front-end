@@ -15,16 +15,16 @@ const PostCard = ({ post }) => {
           <span>
             <h1>{post.createdAt}</h1>
           </span>
-          <p>
-            {post.author}
-            {post.date}
-            {post.time}
-            {post.airport}
-            {post.terminal}
-            {post.dropOff}
-            {post.partySize}
-            {post.car}
-          </p>
+          <ul>
+            <li>{post.author[0].name}</li>
+            <li>{post.date}</li>
+            <li>{post.time}</li>
+            <li>{post.airport}</li>
+            <li>{post.terminal}</li>
+            <li>{post.dropOff}</li>
+            <li>{post.partySize}</li>
+           
+          </ul>
         </header>
       </article>
     </Link>

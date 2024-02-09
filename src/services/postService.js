@@ -14,4 +14,23 @@ async function index() {
   }
 }
 
-export { index }
+async function create(postFormData) {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postFormData)
+      })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export { 
+  index, 
+  create,
+}
