@@ -9,6 +9,7 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PostList from './pages/PostList/PostList'
+import NewPost from './pages/NewPost/NewPost'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -44,6 +45,12 @@ function App() {
     if (user) fetchAllPosts()
   },[user])
 
+  const handleAddPost = async (postFormData) => {
+    const newPost = await postService.create(postFormData)
+    setPosts([newPost, ...posts])
+    navigate('/posts')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -78,6 +85,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <PostList posts={posts}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/posts/new"
+          element={
+            <ProtectedRoute user={user}>
+              <NewPost handleAddPost={handleAddPost}/>
             </ProtectedRoute>
           }
         />
