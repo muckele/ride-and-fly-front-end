@@ -1,19 +1,19 @@
 // css
 import './PostList.css'
 
+// components
+import PostCard from '../../components/PostCard/PostCard'
+
 
 
 const PostList = (props) => {
   return ( 
     <main>
       {props.posts.map(post => (
-        <p key={post._id}>
-          I'm looking for: 
-          {post.createdAt}
-        </p>
+        <PostCard key={post._id} post={post}/>
       ))}
     </main>
   )
 }
- 
+
 export default PostList
