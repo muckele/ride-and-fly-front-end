@@ -18,3 +18,7 @@ li > a {
   text-decoration: none;  
   color: white;
 }
+li > a:visited {
+  text-decoration: none;  
+  color: white;
+}
