@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PostList from './pages/PostList/PostList'
 import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
+import EditPost from './pages/EditPost/EditPost'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -91,7 +92,7 @@ function App() {
           path="/posts"
           element={
             <ProtectedRoute user={user}>
-              <PostList posts={posts}/>
+              <PostList posts={posts} user={user}/>
             </ProtectedRoute>
           }
         />
@@ -111,6 +112,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+    
       </Routes>
     </>
   )
