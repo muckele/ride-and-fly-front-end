@@ -11,6 +11,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PostList from './pages/PostList/PostList'
 import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
+import EditPost from './pages/EditPost/EditPost'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -52,6 +53,12 @@ function App() {
     navigate('/posts')
   }
 
+  const handleUpdatePost = async (postFormData) => {
+    const updatedPost = await postService.update(postFormData)
+    setPosts(posts.map((post) => updatedPost._id === post._id ? updatedPost : post))
+    navigate('/posts')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -85,7 +92,7 @@ function App() {
           path="/posts"
           element={
             <ProtectedRoute user={user}>
-              <PostList posts={posts}/>
+              <PostList posts={posts} user={user}/>
             </ProtectedRoute>
           }
         />
@@ -104,6 +111,14 @@ function App() {
               <PostDetails user={user} />
             </ProtectedRoute>
           }
+        />
+        <Route 
+          path="/posts/:postId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditPost  handleUpdatePost={handleUpdatePost}/>
+            </ProtectedRoute>
+          } 
         />
       </Routes>
     </>

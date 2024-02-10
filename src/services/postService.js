@@ -41,8 +41,25 @@ async function show(postId) {
   }
 }
 
+async function update(postFormData){
+  try {
+    const res = await fetch(`${BASE_URL}/${postFormData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(postFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error) 
+  }
+}
+
 export { 
   index, 
   create,
   show,
+  update,
 }
