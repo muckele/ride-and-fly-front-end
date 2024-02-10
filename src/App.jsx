@@ -10,6 +10,7 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import PostList from './pages/PostList/PostList'
 import NewPost from './pages/NewPost/NewPost'
+import PostDetails from './pages/PostDetails/PostDetails'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -93,6 +94,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <NewPost handleAddPost={handleAddPost}/>
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/posts/:postId"
+          element={
+            <ProtectedRoute user={user}>
+              <PostDetails user={user} />
             </ProtectedRoute>
           }
         />

@@ -30,7 +30,19 @@ async function create(postFormData) {
   }
 }
 
+async function show(postId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${postId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error) 
+  }
+}
+
 export { 
   index, 
   create,
+  show,
 }
