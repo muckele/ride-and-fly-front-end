@@ -57,9 +57,24 @@ async function update(postFormData){
   }
 }
 
-export { 
-  index, 
-  create,
+async function deletePost(postId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${postId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`
+      }
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export {
+  index,
   show,
+  create,
   update,
+  deletePost,
 }
