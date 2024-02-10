@@ -52,6 +52,12 @@ function App() {
     navigate('/posts')
   }
 
+  const handleUpdatePost = async (postFormData) => {
+    const updatedPost = await postService.update(postFormData)
+    setPosts(posts.map((post) => updatedPost._id === post._id ? updatedPost : post))
+    navigate('/posts')
+  }
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
