@@ -1,31 +1,10 @@
 // npm modules
-import { useParams, Link } from 'react-router-dom'
-// import { useEffect, useState } from 'react'
-
-
-// components
-
-//services
-// import * as postService from '../../services/postService'
-
+import { Link } from 'react-router-dom'
 
 // css 
 import './PostCard.css'
 
 const PostCard = ( props ) => {
-
-
-  // const { postId } = useParams()
-  // const [post, setPost] = useState(null)
-
-  // useEffect(() => {
-  //   const fetchPost = async () => {
-  //     const data = await postService.show(postId)
-  //     setPost(data)
-  //   }
-  //   fetchPost()
-  // }, [postId])
-
 
 
   return (
