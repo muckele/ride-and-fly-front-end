@@ -41,14 +41,14 @@ const PostDetails = (props) => {
       </div>
       <div className="message-body">
         <label htmlFor="text-input">Text</label>
-        <textarea
+        {/* <textarea
           required
           type="text"
           name="text"
           id="text-input"
           value={formData.text}
           placeholder="Text"
-        />
+        /> */}
         <button type="submit">Send Message</button>
       </div>
 
