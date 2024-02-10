@@ -59,6 +59,12 @@ function App() {
     navigate('/posts')
   }
 
+  const handleDeletePost = async (postId) => {
+  const deletedPost = await postService.deletePost(postId)
+  setPosts(posts.filter(p => p._id !== deletedPost._id))
+	navigate('/posts')
+}
+
   return (
     <>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -108,7 +114,7 @@ function App() {
           path="/posts/:postId"
           element={
             <ProtectedRoute user={user}>
-              <PostDetails user={user} />
+              <PostDetails user={user} handleDeletePost={handleDeletePost} />
             </ProtectedRoute>
           }
         />

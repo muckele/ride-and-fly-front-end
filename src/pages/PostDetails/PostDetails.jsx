@@ -51,8 +51,15 @@ const PostDetails = (props) => {
         /> */}
         <button type="submit">Send Message</button>
       </div>
-
-    </main>
+      <div>
+        {/* <AuthorInfo content={post} /> */}
+        {post.author[0]._id === props.user.profile &&
+          <>
+            <button onClick={() => props.handleDeletePost(postId)}>Delete</button>
+          </>
+        }
+      </div>
+  </main>
   )
 }
 
