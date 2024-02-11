@@ -43,7 +43,7 @@ const NewPost = (props) => {
         <label htmlFor="time-input">Time:</label> 
         <input
           required
-          type="Time" 
+          type="Date" 
           name="time"
           id="time-input"
           value={formData.time}
