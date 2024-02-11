@@ -52,11 +52,11 @@ const PostDetails = (props) => {
         <button type="submit">Send Message</button>
       </div>
       <div>
-        {/* <AuthorInfo content={post} /> */}
         {post.author[0]._id === props.user.profile &&
-          <>
-            <button onClick={() => props.handleDeletePost(postId)}>Delete</button>
-          </>
+        <>
+          <Link to={`/posts/${postId}/edit`} state={post}>EDIT</Link> <br />
+          <button onClick={() => props.handleDeletePost(postId)}>Delete</button>
+        </>
         }
       </div>
   </main>
