@@ -1,5 +1,6 @@
 // npm modules
 import { useState, useEffect } from 'react'
+import { useParams } from "react-router-dom"
 
 // services
 import * as profileService from '../../services/profileService'
@@ -8,26 +9,26 @@ import * as profileService from '../../services/profileService'
 import styles from './Profiles.module.css'
 
 const Profiles = () => {
-  const [profiles, setProfiles] = useState([])
+  const { profileId } = useParams()
+  // const [profiles, setProfiles] = useState([])
+  const [userProfile, setUserProfile] = useState(null)
 
   useEffect(() => {
-    const fetchProfiles = async () => {
-      const profileData = await profileService.getAllProfiles()
-      setProfiles(profileData)
+    const fetchUserProfile = async () => {
+      const profileData = await profileService.getProfile(profileId)
+      setUserProfile(profileData)
     }
-    fetchProfiles()
-  }, [])
+    fetchUserProfile()
+  }, [profileId])
+  
 
-  if (!profiles.length) {
+  if (!userProfile) {
     return <main className={styles.container}><h1>Loading...</h1></main>
   }
-  
   return (
     <main className={styles.container}>
-      <h1>Hello. This is a list of all the profiles.</h1>
-      {profiles.map(profile => (
-        <p key={profile._id}>{profile.name}</p>
-      ))}
+      <h1>Profile</h1>
+      <p>{userProfile.name}</p>
     </main>
   )
 }
