@@ -12,6 +12,7 @@ import PostList from './pages/PostList/PostList'
 import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -21,6 +22,8 @@ import Footer from './components/Footer/footer'
 // services
 import * as authService from './services/authService'
 import * as postService from './services/postService'
+import * as profileService from './services/profileService'
+
 
 // styles
 import './App.css'
@@ -28,7 +31,9 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
+  const [profiles, setProfiles] = useState([])
   const navigate = useNavigate()
+
 
   const handleLogout = () => {
     authService.logout()
@@ -64,7 +69,29 @@ function App() {
   const deletedPost = await postService.deletePost(postId)
   setPosts(posts.filter(p => p._id !== deletedPost._id))
 	navigate('/posts')
-}
+  }
+
+  const handleUpdateProfile = async (profileFormData) => {
+    const updatedProfile = await profileService.updateProfile(profileFormData)
+    console.log(profileFormData);
+    const index = profiles.findIndex(profile => profile._id === updatedProfile._id)
+    if (index !== -1) {
+      const updatedProfiles = [...profiles];
+      updatedProfiles[index] = updatedProfile;
+      setProfiles(updatedProfiles);
+    }
+
+    navigate('/')
+    //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
+  }
+  // const handleUpdateProfile = async (profileFormData) => {
+  //   const updatedProfile = await profileService.updateProfile(profileFormData)
+  //   console.log(profileFormData);
+  //   setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
+  //   navigate('/')
+  //   //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
+  // }
+
 
   return (
     <div className='app-container'>
@@ -75,7 +102,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <Profiles user={user}/>
+              <Profiles user={user} handleUpdateProfile={handleUpdateProfile}/>
             </ProtectedRoute>
           }
         />
@@ -124,6 +151,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditPost  handleUpdatePost={handleUpdatePost}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/profiles/:profileId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditProfile  handleUpdateProfile={handleUpdateProfile}/>
             </ProtectedRoute>
           } 
         />

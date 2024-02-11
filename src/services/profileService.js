@@ -46,4 +46,20 @@ async function addPhoto(photoData) {
   }
 }
 
-export { getAllProfiles, addPhoto, getProfile }
+async function updateProfile(profileFormData){
+  try {
+    const res = await fetch(`${BASE_URL}/${profileFormData._id}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(profileFormData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error) 
+  }
+}
+
+export { getAllProfiles, addPhoto, getProfile, updateProfile }
