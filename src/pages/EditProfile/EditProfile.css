@@ -1,0 +1,1 @@
+<Link to={`/posts/${postId}/edit`} state={post}>EDIT</Link>

@@ -29,6 +29,11 @@ const Profiles = (props) => {
     <main className={styles.container}>
       <h1>Profile</h1>
       <p>{userProfile.name}</p>
+      <img src={userProfile.photo} alt="A sexy image" />
+      <p>{userProfile.bio}</p>
+      <p>{userProfile.funFacts}</p>
+      {userProfile.posts.map(post=> post.createAt)}
+      
       <Link to={`/profiles/${profileId}/edit`} state={props.user}>EDIT</Link>
     </main>
   

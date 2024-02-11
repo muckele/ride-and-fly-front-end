@@ -12,6 +12,7 @@ import PostList from './pages/PostList/PostList'
 import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
+import EditProfile from './pages/EditProfile/EditProfile'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -72,10 +73,24 @@ function App() {
 
   const handleUpdateProfile = async (profileFormData) => {
     const updatedProfile = await profileService.updateProfile(profileFormData)
-    setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
-    navigate('/profile')
-  }
+    console.log(profileFormData);
+    const index = profiles.findIndex(profile => profile._id === updatedProfile._id)
+    if (index !== -1) {
+      const updatedProfiles = [...profiles];
+      updatedProfiles[index] = updatedProfile;
+      setProfiles(updatedProfiles);
+    }
 
+    navigate('/')
+    //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
+  }
+  // const handleUpdateProfile = async (profileFormData) => {
+  //   const updatedProfile = await profileService.updateProfile(profileFormData)
+  //   console.log(profileFormData);
+  //   setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
+  //   navigate('/')
+  //   //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
+  // }
 
 
   return (
@@ -136,6 +151,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditPost  handleUpdatePost={handleUpdatePost}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/profiles/:profileId/edit" 
+          element={
+            <ProtectedRoute user={user}>
+              <EditProfile  handleUpdateProfile={handleUpdateProfile}/>
             </ProtectedRoute>
           } 
         />
