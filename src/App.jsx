@@ -72,10 +72,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
         <Route
-          path="/profiles"
+          path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <Profiles />
+              <Profiles user={user}/>
             </ProtectedRoute>
           }
         />
