@@ -16,6 +16,7 @@ import EditPost from './pages/EditPost/EditPost'
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
+import Footer from './components/Footer/footer'
 
 // services
 import * as authService from './services/authService'
@@ -66,7 +67,7 @@ function App() {
 }
 
   return (
-    <>
+    <div className='app-container'>
       <NavBar user={user} handleLogout={handleLogout} />
       <Routes>
         <Route path="/" element={<Landing user={user} />} />
@@ -127,7 +128,8 @@ function App() {
           } 
         />
       </Routes>
-    </>
+      <Footer />
+    </div>
   )
 }
 
