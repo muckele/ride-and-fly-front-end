@@ -21,6 +21,8 @@ import Footer from './components/Footer/footer'
 // services
 import * as authService from './services/authService'
 import * as postService from './services/postService'
+import * as profileService from './services/profileService'
+
 
 // styles
 import './App.css'
@@ -28,7 +30,9 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
+  const [profiles, setProfiles] = useState([])
   const navigate = useNavigate()
+
 
   const handleLogout = () => {
     authService.logout()
@@ -64,7 +68,15 @@ function App() {
   const deletedPost = await postService.deletePost(postId)
   setPosts(posts.filter(p => p._id !== deletedPost._id))
 	navigate('/posts')
-}
+  }
+
+  const handleUpdateProfile = async (profileFormData) => {
+    const updatedProfile = await profileService.updateProfile(profileFormData)
+    setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
+    navigate('/profile')
+  }
+
+
 
   return (
     <div className='app-container'>
@@ -75,7 +87,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <Profiles user={user}/>
+              <Profiles user={user} handleUpdateProfile={handleUpdateProfile}/>
             </ProtectedRoute>
           }
         />
