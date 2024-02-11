@@ -22,3 +22,8 @@ li > a:visited {
   text-decoration: none;  
   color: white;
 }
+
+.logo {
+  height: 10%;
+  width: 10%;
+}

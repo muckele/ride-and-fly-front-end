@@ -25,8 +25,9 @@ const NewPost = (props) => {
 
 
   return ( 
-  <main>
+  <main className="newpost-container">
     <form onSubmit={handleSubmit}>
+        <div className="form-row">
         <label htmlFor="date-input">Date:</label>
         <input
           required
@@ -36,8 +37,10 @@ const NewPost = (props) => {
           value={formData.date}
           onChange={handleChange}
         />
+        </div>
 
-      <label htmlFor="time-input">Time:</label> 
+        <div className="form-row">
+        <label htmlFor="time-input">Time:</label> 
         <input
           required
           type="Date" 
@@ -46,6 +49,9 @@ const NewPost = (props) => {
           value={formData.time}
           onChange={handleChange}
         />
+        </div>
+
+        <div className="form-row">
         <label htmlFor="airport-input">Airport:</label>
         <select
           required
@@ -58,6 +64,9 @@ const NewPost = (props) => {
           <option value="JFK">JFK</option>
           <option value="LGA">LGA</option>
         </select>
+        </div>
+      
+        <div className="form-row">
         <label htmlFor="terminal-input">Terminal:</label>
 				<input
           required
@@ -67,6 +76,9 @@ const NewPost = (props) => {
           value={formData.terminal}
           onChange={handleChange}
         />
+        </div>
+
+        <div className="form-row">
         <label htmlFor="dropOff-input">Dropoff:</label>
 				<input
           required
@@ -76,6 +88,9 @@ const NewPost = (props) => {
           value={formData.dropOff}
           onChange={handleChange}
         />
+        </div>
+
+        <div className="form-row">
         <label htmlFor="partySize-input">Party Size:</label>
 				<input
           required
@@ -85,10 +100,10 @@ const NewPost = (props) => {
           value={formData.partySize}
           onChange={handleChange}
         />
-    
-  
-
+        </div>
+        <div className="form-row">
         <button type="submit">SUBMIT</button>
+        </div>
       </form>
   </main>
   );

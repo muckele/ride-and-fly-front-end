@@ -20,6 +20,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  padding:  0;
+  height: 100vh;
+  width: 100%;
 }
 
 a,
@@ -32,3 +40,6 @@ nav > ul {
   padding: 16px 32px;
 }
 
+.app-container{
+  text-align: center;
+}
