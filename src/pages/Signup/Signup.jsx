@@ -18,6 +18,8 @@ const Signup = ({ handleAuthEvt }) => {
     email: '',
     password: '',
     passwordConf: '',
+    bio: '',
+    funFacts: '', 
   })
   const [photoData, setPhotoData] = useState({ photo: null })
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -113,6 +115,26 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
+
+
+        <label className={styles.label}>
+          Fun Facts
+          <input
+            type="text"
+            name="funFacts"
+            onChange={handleChange}
+          />
+          </label>
+          <label className={styles.label}>
+          Bio
+          <input
+            type="text"
+            name="bio"
+            onChange={handleChange}
+          />
+          </label>
+
+
         <label className={styles.label}>
           Upload Photo
           <input 
