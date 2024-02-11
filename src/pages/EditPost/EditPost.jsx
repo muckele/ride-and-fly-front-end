@@ -37,7 +37,7 @@ const EditPost = (props) => {
       <label htmlFor="time-input">Time:</label> 
         <input
           required
-          type="Date" 
+          type="Time" 
           name="time"
           id="time-input"
           value={formData.time}
