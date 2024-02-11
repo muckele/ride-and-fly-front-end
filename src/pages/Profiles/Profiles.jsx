@@ -7,6 +7,7 @@ import * as profileService from '../../services/profileService'
 
 // css
 import styles from './Profiles.module.css'
+import { index } from '../../services/postService'
 
 const Profiles = (props) => {
   const { profileId } = useParams()
@@ -32,7 +33,9 @@ const Profiles = (props) => {
       <img src={userProfile.photo} alt="A sexy image" />
       <p>{userProfile.bio}</p>
       <p>{userProfile.funFacts}</p>
-      {userProfile.posts.map(post=> post.createAt)}
+      {userProfile.posts.map(post=> 
+        <p key={index}>{post}</p>
+        )}
       
       <Link to={`/profiles/${profileId}/edit`} state={props.user}>EDIT</Link>
     </main>
