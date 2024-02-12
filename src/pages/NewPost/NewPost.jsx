@@ -12,6 +12,10 @@ const NewPost = (props) => {
     terminal:'',
     dropOff:'',
     partySize:'',
+    luxuryCar: false,
+    oversizedLuggage: false,
+    travelingWithPet: false,
+    carType: ''
   })
 
   const handleSubmit = evt => {
@@ -19,8 +23,15 @@ const NewPost = (props) => {
     props.handleAddPost(formData)
   }
 
+  // const handleChange = evt => {
+  //   setFormData({...formData, [evt.target.name]: evt.target.value})
+  // }
   const handleChange = evt => {
-    setFormData({...formData, [evt.target.name]: evt.target.value})
+    const { name, value, type, checked } = evt.target;
+    setFormData({
+      ...formData,
+      [name]: type === 'checkbox' ? checked : value
+    })
   }
 
 
@@ -101,6 +112,43 @@ const NewPost = (props) => {
           onChange={handleChange}
         />
         </div>
+        <label>
+          Oversized Luggage:
+          <input
+            name="oversizedLuggage"
+            type="checkbox"
+            checked={formData.oversizedLuggage}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Traveling with a Pet:
+          <input
+            name="travelingWithPet"
+            type="checkbox"
+            checked={formData.travelingWithPet}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Luxury Car:
+          <input
+            name="luxuryCar"
+            type="checkbox"
+            checked={formData.luxuryCar}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Car Type:
+          <select name="carType" value={formData.carType} onChange={handleChange}>
+            <option value="">Select Car Type</option>
+            <option value="sedan">Sedan</option>
+            <option value="suv">SUV</option>
+            <option value="van">Van</option>
+            <option value="luxury">Luxury</option>
+          </select>
+        </label>
         <div className="form-row">
         <button type="submit">SUBMIT</button>
         </div>
