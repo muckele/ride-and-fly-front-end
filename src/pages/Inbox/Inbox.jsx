@@ -1,8 +1,6 @@
 
-//npm modules
-import { useState, useEffect } from 'react'
-
-
+//components
+import MessageCard from '../../components/Message/MessageCard'
 
 //css
 import '../Inbox/Inbox.css'
@@ -17,10 +15,7 @@ const Inbox = (props) => {
     <div>
       <h1>Inbox</h1>
       {props.messages.map((message) => (
-        <>
-          <p key={message._id}>Text: {message.text}</p> 
-          <p> {message.recipient.name}</p>
-        </>
+        <MessageCard key={message._id} message={message}/>
       ))}
       
     </div>
