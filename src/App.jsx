@@ -13,6 +13,7 @@ import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
+import Inbox from './pages/Inbox/Inbox'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -159,6 +160,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditProfile  handleUpdateProfile={handleUpdateProfile}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/inbox" 
+          element={
+            <ProtectedRoute user={user}>
+              <Inbox />
             </ProtectedRoute>
           } 
         />
