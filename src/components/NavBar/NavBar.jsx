@@ -10,7 +10,6 @@ const NavBar = ({ user, handleLogout }) => {
 
       {user ?
         <ul>
-          <li>Welcome, {user.name}</li>
           <li><NavLink to={`/profiles/${user.profile}`}>Profiles</NavLink></li>
           {/* <li><NavLink to="/profiles/:profileId">Profiles</NavLink></li> */}
           <li><NavLink to="/posts">Posts</NavLink></li>

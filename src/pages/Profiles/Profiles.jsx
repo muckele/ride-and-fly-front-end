@@ -9,7 +9,7 @@ import * as profileService from '../../services/profileService'
 import './Profiles.css'
 import { index } from '../../services/postService'
 
-const Profiles = (props) => {
+const Profiles = () => {
   const { profileId } = useParams()
   // const [profiles, setProfiles] = useState([])
   const [userProfile, setUserProfile] = useState(null)
@@ -17,6 +17,7 @@ const Profiles = (props) => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       const profileData = await profileService.getProfile(profileId)
+      console.log(profileData)
       setUserProfile(profileData)
     }
     fetchUserProfile()
@@ -35,9 +36,9 @@ const Profiles = (props) => {
       <p>{userProfile.funFacts}</p>
       {userProfile.posts.map(post=> 
         <p key={index}>{post}</p>
-        )}
+      )}
       
-      <Link to={`/profiles/${profileId}/edit`} state={props.user}>EDIT</Link>
+      <Link to={`/profiles/${profileId}/edit`} state={userProfile}>EDIT</Link>
     </main>
   
   )
