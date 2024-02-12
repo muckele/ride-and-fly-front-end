@@ -14,6 +14,7 @@ import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
+import TripDetails from './pages/TripDetails/TripDetails'
 
 
 // components
@@ -26,7 +27,7 @@ import * as authService from './services/authService'
 import * as postService from './services/postService'
 import * as profileService from './services/profileService'
 import * as messageService from './services/messageService'
-import * as tripService from './services/tripService'
+// import * as tripService from './services/tripService'
 
 // styles
 import './App.css'
