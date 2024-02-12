@@ -16,21 +16,16 @@ const PostCard = ( {post} ) => {
       </Link>
       <div className='postcard-container'>
       <ul>
-        <li>User name:</li>
-        <li>Date/Time</li>
-        <li>Airport</li>
-        <li>Terminal #</li>
-        <li>Drop off at </li>
-        <li>Party size</li>
-      </ul>
-      <ul >
-        <li>{post.author[0].name}</li>
-        <li>{post.date}</li>
-        <li>{post.time}</li>
-        <li>{post.airport}</li>
-        <li>{post.terminal}</li>
-        <li>{post.dropOff}</li>
-        <li>{post.partySize}</li>
+        <li>User name: {post.author[0].name}</li>
+        <li>Date/Time: {post.date}</li>
+        <li>Airport: {post.airport}</li>
+        <li>Terminal: {post.terminal}</li>
+        <li>Dropoff: {post.dropOff} </li>
+        <li>Party size: {post.partySize}</li>
+        <li>Luxury Car: {post.luxuryCar ? 'Yes' : 'No'}</li>
+        <li>Oversized Luggage: {post.oversizedLuggage ? 'Yes' : 'No'}</li>
+        <li>Traveling with a Pet: {post.travelingWithPet ? 'Yes' : 'No'}</li>
+        <li>Car Type: {post.carType}</li>
       </ul>
       </div>
     </div>
