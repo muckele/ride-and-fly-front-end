@@ -15,6 +15,7 @@ import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 
+
 // components
 import NavBar from './components/NavBar/NavBar'
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute'
@@ -25,6 +26,7 @@ import * as authService from './services/authService'
 import * as postService from './services/postService'
 import * as profileService from './services/profileService'
 import * as messageService from './services/messageService'
+import * as tripService from './services/tripService'
 
 // styles
 import './App.css'
@@ -169,6 +171,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <Inbox messages={messages} />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/trips" 
+          element={
+            <ProtectedRoute user={user}>
+              <TripDetails />
             </ProtectedRoute>
           } 
         />
