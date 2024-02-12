@@ -14,7 +14,24 @@ async function indexInbox() {
   }
 }
 
+async function createMessage(messageFormData) {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(messageFormData)
+      })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 
-export { indexInbox , }
+
+
+export { indexInbox , createMessage }

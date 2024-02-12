@@ -88,6 +88,12 @@ function App() {
     setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
     navigate(`/profiles/${updatedProfile._id}`)
   }
+
+  const handleSendMessage = async (messageFormData) => {
+    const newMessage = await messageService.createMessage(messageFormData)
+    setMessages([newMessage, ...messages])
+    navigate('/inbox')
+  }
   
   return (
     <div className='app-container'>
@@ -138,7 +144,7 @@ function App() {
           path="/posts/:postId"
           element={
             <ProtectedRoute user={user}>
-              <PostDetails user={user} handleDeletePost={handleDeletePost} />
+              <PostDetails user={user} handleDeletePost={handleDeletePost} handleSendMessage={handleSendMessage} />
             </ProtectedRoute>
           }
         />
