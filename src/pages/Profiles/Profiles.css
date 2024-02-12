@@ -1,0 +1,10 @@
+.profile-container{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 50px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 500px;
+  margin-top: 30px;
+}

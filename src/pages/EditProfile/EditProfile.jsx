@@ -46,13 +46,17 @@ const EditProfile = (props) => {
 
 
   return (
-    <main>
+    <main className='editprofile-container'>
       <h1>Edit Profile</h1>
       <form autoComplete="off" onSubmit={handleSubmit}>
+      <div className="form-row">
         <label>
           Name
           <input type="text" value={formData.name} name="name" onChange={handleChange} />
         </label>
+        </div>
+
+        <div className="form-row">
         <label>
           Email
           <input
@@ -62,6 +66,9 @@ const EditProfile = (props) => {
             onChange={handleChange}
           />
         </label>
+        </div>
+
+        <div className="form-row">
         <label>
           Fun Facts
           <input
@@ -71,6 +78,9 @@ const EditProfile = (props) => {
             onChange={handleChange}
           />
           </label>
+          </div>
+
+          <div className="form-row">
           <label>
           Bio
           <input
@@ -80,6 +90,7 @@ const EditProfile = (props) => {
             onChange={handleChange}
           />
           </label>
+          </div>
 
 
         {/* <label>
@@ -91,7 +102,7 @@ const EditProfile = (props) => {
             ref={imgInputRef}
           />
         </label> */}
-        <div>
+        <div className="form-row">
           <button>Save Changes</button>
         </div>
       </form>

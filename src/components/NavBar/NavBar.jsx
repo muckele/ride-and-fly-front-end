@@ -1,12 +1,16 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+// assets
+import logo from '../../assets/images/logo.png'
+
 //  css 
 import '../NavBar/NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className='nav-container'>
+
       {user ?
         <ul>
           <li>Welcome, {user.name}</li>

@@ -1,0 +1,51 @@
+form {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 50px;
+  width: 500px;
+}
+
+.form-row {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.editpost-container{
+  height: 100%;
+  display: flex;
+  padding: 28px 21px;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.editpost-container input, textarea, select{ 
+  width: 100%;
+  padding: 14px;
+  font-size: 14px;
+  resize: vertical;
+  border-radius: 5px;
+  margin: 7px 0px 14px 0px;
+  border: 3px solid rgb(138,222,255);
+  font-family:  sans-serif;
+}
+
+.editpost-container label {
+  font-weight: 600;
+  margin: 7px 30px 20px 0px;
+}
+
+.editprofile-container button {
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+  background-color: #4299e1;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  line-height: 26px;
+}

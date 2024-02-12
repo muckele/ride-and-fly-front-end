@@ -22,8 +22,9 @@ const EditPost = (props) => {
   }
   
   return (
-    <main>
+    <main className="editpost-container">
       <form onSubmit={handleSubmit}>
+      <div className="form-row">
         <label htmlFor="date-input">Date:</label>
         <input
           required
@@ -33,7 +34,8 @@ const EditPost = (props) => {
           value={formData.date}
           onChange={handleChange}
         />
-
+        </div>
+        <div className="form-row">
       <label htmlFor="time-input">Time:</label> 
         <input
           required
@@ -43,7 +45,9 @@ const EditPost = (props) => {
           value={formData.time}
           onChange={handleChange}
         />
+        </div>
 
+        <div className="form-row">
         <label htmlFor="airport-input">Airport:</label>
         <select
           required
@@ -56,6 +60,9 @@ const EditPost = (props) => {
           <option value="JFK">JFK</option>
           <option value="LGA">LGA</option>
         </select>
+        </div>
+
+        <div className="form-row">
         <label htmlFor="terminal-input">Terminal:</label>
 				<input
           required
@@ -65,6 +72,9 @@ const EditPost = (props) => {
           value={formData.terminal}
           onChange={handleChange}
         /> 
+        </div>
+
+        <div className="form-row">
         <label htmlFor="dropOff-input">Dropoff:</label>
 				<input
           required
@@ -74,6 +84,9 @@ const EditPost = (props) => {
           value={formData.dropOff}
           onChange={handleChange}
         />
+        </div>
+
+        <div className="form-row">
         <label htmlFor="partySize-input">Party Size:</label>
 				<input
           required
@@ -83,6 +96,7 @@ const EditPost = (props) => {
           value={formData.partySize}
           onChange={handleChange}
         />
+        </div>
         <button type="submit">Update</button>
       </form>
     </main>
