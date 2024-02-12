@@ -82,28 +82,13 @@ function App() {
 	navigate('/posts')
   }
 
-  // const handleUpdateProfile = async (profileFormData) => {
-  //   const updatedProfile = await profileService.updateProfile(profileFormData)
-  //   console.log(profileFormData);
-  //   const index = profiles.findIndex(profile => profile._id === updatedProfile._id)
-  //   if (index !== -1) {
-  //     const updatedProfiles = [...profiles];
-  //     updatedProfiles[index] = updatedProfile;
-  //     setProfiles(updatedProfiles);
-  //   }
-
-  //   navigate('/')
-  //   //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
-  
   const handleUpdateProfile = async (profileFormData) => {
     const updatedProfile = await profileService.updateProfile(profileFormData)
-    console.log(profileFormData);
+    console.log(updatedProfile);
     setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
-    navigate('/')
-  //   //!NEED TO NAVIGATE TO PROFILE/._ID FIX LINE 77!!!!!!!!
+    navigate(`/profiles/${updatedProfile._id}`)
   }
-
-
+  
   return (
     <div className='app-container'>
       <NavBar user={user} handleLogout={handleLogout} />
@@ -113,7 +98,7 @@ function App() {
           path="/profiles/:profileId"
           element={
             <ProtectedRoute user={user}>
-              <Profiles user={user} handleUpdateProfile={handleUpdateProfile}/>
+              <Profiles user={user} />
             </ProtectedRoute>
           }
         />

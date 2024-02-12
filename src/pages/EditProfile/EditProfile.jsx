@@ -19,77 +19,51 @@ const EditProfile = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
-  // const handleChangePhoto = evt => {
-  //   const file = evt.target.files[0]
-  //   let isFileInvalid = false
-  //   let errMsg = ""
-  //   const validFormats = ['gif', 'jpeg', 'jpg', 'png', 'svg', 'webp']
-  //   const photoFormat = file.name.split('.').at(-1)
-
-  //   // cloudinary supports files up to 10.4MB each as of May 2023
-  //   if (file.size >= 10485760) {
-  //     errMsg = "Image must be smaller than 10.4MB"
-  //     isFileInvalid = true
-  //   }
-  //   if (!validFormats.includes(photoFormat)) {
-  //     errMsg = "Image must be in gif, jpeg/jpg, png, svg, or webp format"
-  //     isFileInvalid = true
-  //   }
-    
-  //   if (isFileInvalid) {
-  //     imgInputRef.current.value = null
-  //     return
-  //   }
-
-  //   setPhotoData({ photo: evt.target.files[0] })
-  // }
-
 
   return (
     <main className='editprofile-container'>
       <h1>Edit Profile</h1>
       <form autoComplete="off" onSubmit={handleSubmit}>
-      <div className="form-row">
-        <label>
-          Name
-          <input type="text" value={formData.name} name="name" onChange={handleChange} />
-        </label>
+        <div className="form-row">
+          <label htmlFor="name-input"> Name </label>
+          <input type="text" 
+          value={formData.name} 
+          name="name" 
+          id="name-input"
+          onChange={handleChange} />
         </div>
 
         <div className="form-row">
-        <label>
-          Email
+          <label htmlFor="email-input">Email</label>
           <input
-            type="text"
-            value={formData.email}
-            name="email"
-            onChange={handleChange}
+          type="text"
+          value={formData.email}
+          name="email"
+          id="email-input"
+          onChange={handleChange}
           />
-        </label>
         </div>
 
         <div className="form-row">
-        <label>
-          Fun Facts
+          <label htmlFor="funFacts-input">Fun Facts</label>
           <input
             type="text"
             name="funFacts"
+            id="funFacts-input"
             value={formData.funFacts}
             onChange={handleChange}
           />
-          </label>
-          </div>
+        </div>
 
           <div className="form-row">
-          <label>
-          Bio
-          <input
-            type="text"
-            name="bio"
-            value={formData.bio}
-            onChange={handleChange}
-          />
-          </label>
+            <label htmlFor="bio-input">Bio</label>
+            <input
+              type="text"
+              name="bio"
+              id="bio-input"
+              value={formData.bio}
+              onChange={handleChange}
+            />
           </div>
 
 
@@ -102,9 +76,10 @@ const EditProfile = (props) => {
             ref={imgInputRef}
           />
         </label> */}
-        <div className="form-row">
+
+  
           <button>Save Changes</button>
-        </div>
+      
       </form>
     </main>
   
