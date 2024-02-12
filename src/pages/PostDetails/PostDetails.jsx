@@ -20,11 +20,22 @@ const PostDetails = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-    props.handleSendMessage(messageFormData)
+
+
+    const messageData = {
+      ...messageFormData,
+      originalPost: postId,
+      recipient: post.author[0]._id
+
+    }
+
+    console.log(messageData);
+
+    props.handleSendMessage(messageData)
     setMessageFormData({text: ''})
   }
 
-  console.log(messageFormData)
+  
 
 
   useEffect(() => {
@@ -57,17 +68,17 @@ const PostDetails = (props) => {
       </div>
 
       <div className="message-body">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="text-input">Text</label>
-        <textarea
-          required
-          type="text"
-          name="text"
-          id="text-input"
-          value={messageFormData.text}
-          onChange={handleChange}
-        />
-        <button onClick={() => props.handleSendMessage(messageFormData)}>Send Message</button>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="text-input">Text</label>
+          <textarea
+            required
+            type="text"
+            name="text"
+            id="text-input"
+            value={messageFormData.text}
+            onChange={handleChange}
+          />
+          <button>Send Message</button>
         </form>
       </div>
 

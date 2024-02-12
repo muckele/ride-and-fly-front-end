@@ -8,9 +8,6 @@ import '../Inbox/Inbox.css'
 const Inbox = (props) => {
 
 
-  console.log(props.messages)
-
-
   return ( 
     <div>
       <h1>Inbox</h1>
