@@ -12,6 +12,21 @@ const PostDetails = (props) => {
   const { postId } = useParams()
   const [post, setPost] = useState(null)
 
+  const [messageFormData, setMessageFormData] = useState({text: ''})
+  
+  const handleChange = evt => {
+    setMessageFormData({...messageFormData, [evt.target.name]: evt.target.value})
+  }
+
+  const handleSubmit = evt => {
+    evt.preventDefault()
+    props.handleSendMessage(messageFormData)
+    setMessageFormData({text: ''})
+  }
+
+  console.log(messageFormData)
+
+
   useEffect(() => {
     const fetchPost = async () => {
       const data = await postService.show(postId)
@@ -22,6 +37,7 @@ const PostDetails = (props) => {
 
   if (!post) return <h1>Loading, please wait!</h1>
   
+
 
   return (
     <main>
@@ -39,18 +55,22 @@ const PostDetails = (props) => {
           <li>{post.partySize}</li>
         </ul>
       </div>
+
       <div className="message-body">
+      <form onSubmit={handleSubmit}>
         <label htmlFor="text-input">Text</label>
-        {/* <textarea
+        <textarea
           required
           type="text"
           name="text"
           id="text-input"
-          value={formData.text}
-          placeholder="Text"
-        /> */}
-        <button type="submit">Send Message</button>
+          value={messageFormData.text}
+          onChange={handleChange}
+        />
+        <button onClick={() => props.handleSendMessage(messageFormData)}>Send Message</button>
+        </form>
       </div>
+
       <div>
         {post.author[0]._id === props.user.profile &&
         <>

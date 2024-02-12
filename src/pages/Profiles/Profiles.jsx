@@ -35,7 +35,7 @@ const Profiles = () => {
       <p>{userProfile.bio}</p>
       <p>{userProfile.funFacts}</p>
       {userProfile.posts.map(post=> 
-        <p key={index}>{post}</p>
+        <p key={userProfile._id}>{post}</p>
       )}
       
       <Link to={`/profiles/${profileId}/edit`} state={userProfile}>EDIT</Link>
