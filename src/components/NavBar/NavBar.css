@@ -4,6 +4,12 @@ ul{
   text-decoration: none;
 }
 
+nav{
+  position:absolute;
+  top:0;
+  
+}
+
 li {
  /* display: flex; */
  margin: 20px;

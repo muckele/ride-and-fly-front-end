@@ -6,7 +6,7 @@ import { useParams, Link } from "react-router-dom"
 import * as profileService from '../../services/profileService'
 
 // css
-import styles from './Profiles.module.css'
+import './Profiles.css'
 import { index } from '../../services/postService'
 
 const Profiles = (props) => {
@@ -24,10 +24,10 @@ const Profiles = (props) => {
   
 
   if (!userProfile) {
-    return <main className={styles.container}><h1>Loading...</h1></main>
+    return <main className="profile-container"><h1>Loading...</h1></main>
   }
   return (
-    <main className={styles.container}>
+    <main className="profile-container">
       <h1>Profile</h1>
       <p>{userProfile.name}</p>
       <img src={userProfile.photo} alt="A sexy image" />
