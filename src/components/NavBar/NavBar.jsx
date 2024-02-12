@@ -1,9 +1,6 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
-// assets
-import logo from '../../assets/images/logo.png'
-
 //  css 
 import '../NavBar/NavBar.css'
 
