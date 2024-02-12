@@ -1,9 +1,6 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
-// assets
-import logo from '../../assets/images/logo.png'
-
 //  css 
 import '../NavBar/NavBar.css'
 
@@ -20,6 +17,7 @@ const NavBar = ({ user, handleLogout }) => {
           <li><NavLink to="/auth/change-password">Change Password</NavLink></li>
           <li><NavLink to="" onClick={handleLogout}>Log Out</NavLink></li>
           <li><NavLink to="/posts/new">New Post</NavLink></li>
+          <li><NavLink to="/inbox">Inbox</NavLink></li>
         </ul>
       :
         <ul>

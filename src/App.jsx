@@ -13,6 +13,7 @@ import NewPost from './pages/NewPost/NewPost'
 import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
+import Inbox from './pages/Inbox/Inbox'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -23,7 +24,7 @@ import Footer from './components/Footer/footer'
 import * as authService from './services/authService'
 import * as postService from './services/postService'
 import * as profileService from './services/profileService'
-
+import * as messageService from './services/messageService'
 
 // styles
 import './App.css'
@@ -32,7 +33,17 @@ function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
   const [profiles, setProfiles] = useState([])
+  const [messages, setMessages] = useState([])
   const navigate = useNavigate()
+
+  
+  useEffect (() => {
+    const fetchMessages = async () => {
+      const data = await messageService.indexInbox()
+      setMessages(data)
+    }
+    if (user) fetchMessages()
+  }, [user])
 
 
   const handleLogout = () => {
@@ -159,6 +170,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <EditProfile  handleUpdateProfile={handleUpdateProfile}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/inbox" 
+          element={
+            <ProtectedRoute user={user}>
+              <Inbox messages={messages} />
             </ProtectedRoute>
           } 
         />
