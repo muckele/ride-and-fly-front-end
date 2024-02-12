@@ -92,7 +92,7 @@ function App() {
   const handleSendMessage = async (messageFormData) => {
     const newMessage = await messageService.createMessage(messageFormData)
     setMessages([newMessage, ...messages])
-    navigate('/inbox')
+    // navigate('/inbox')
   }
   
   return (

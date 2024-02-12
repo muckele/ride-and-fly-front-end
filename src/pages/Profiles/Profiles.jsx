@@ -7,7 +7,6 @@ import * as profileService from '../../services/profileService'
 
 // css
 import './Profiles.css'
-import { index } from '../../services/postService'
 
 const Profiles = () => {
   const { profileId } = useParams()
