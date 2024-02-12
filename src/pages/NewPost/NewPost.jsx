@@ -113,15 +113,6 @@ const NewPost = (props) => {
         />
         </div>
         <label>
-          Luxury Car:
-          <input
-            name="luxuryCar"
-            type="checkbox"
-            checked={formData.luxuryCar}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
           Oversized Luggage:
           <input
             name="oversizedLuggage"
@@ -136,6 +127,15 @@ const NewPost = (props) => {
             name="travelingWithPet"
             type="checkbox"
             checked={formData.travelingWithPet}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Luxury Car:
+          <input
+            name="luxuryCar"
+            type="checkbox"
+            checked={formData.luxuryCar}
             onChange={handleChange}
           />
         </label>
