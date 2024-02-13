@@ -10,13 +10,11 @@ import './Profiles.css'
 
 const Profiles = () => {
   const { profileId } = useParams()
-  // const [profiles, setProfiles] = useState([])
   const [userProfile, setUserProfile] = useState(null)
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       const profileData = await profileService.getProfile(profileId)
-      console.log(profileData)
       setUserProfile(profileData)
     }
     fetchUserProfile()
