@@ -53,12 +53,15 @@ nav{
   left: 50%;  
   transform: translateX(-50%);
   width: 100%;
-  max-width: 1300px;
+  height: 80px;;
+  /* max-width: 2100px; */
   padding:  2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  z-index: 1;
+  z-index: 1000;
+  background-color: rgba(51, 51, 51,0.8);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 nav > ul {
