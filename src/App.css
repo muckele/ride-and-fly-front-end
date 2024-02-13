@@ -81,6 +81,9 @@ button{
   font-weight: 700;
   color: white;
   line-height: 26px;
+  gap: 1px;
+  display: flex;
+  /* background-color: transparent; */
 }
 
 .app-container{

@@ -35,6 +35,7 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 * [Flaticon](https://www.flaticon.com/)
 * [Responsive design](https://youtu.be/HbBMp6yUXO0?si=ewkSnuy17KrDCHoW)
 * [css box shadow](https://getcssscan.com/css-box-shadow-examples)
+* [responsive web design](https://youtu.be/3gbA350zvbg?si=xmkqRALJmmNLNDH_)
 * [dynamic text](https://alvarotrigo.com/blog/css-text-animations/)
 
 
