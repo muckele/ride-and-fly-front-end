@@ -14,7 +14,6 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 * <a>![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)</a>
 * <a>![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)</a>
 * <a>![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)</a>
-* <a>![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)</a>
 * <a>![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)</a>
 * <a> ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)</a>
 * <a>![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)</a>
@@ -27,22 +26,20 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 
 # 💌 Attributions 
 * # images
-* [PickleTimeLogo](https://www.shutterstock.com/image-vector/powerful-smash-shot-execution-vector-icon-2376962975)
-* [Pickleball_xl](https://www.self.com/story/basic-pickleball-rules-beginners)
+* [Logo](https://www.shopify.com/tools/logo-maker/my-logos)
+* [cityscape](gemma.app)
 * # css
 * [Copy-paste-css](https://copy-paste-css.com/)
 * [Flaticon](https://www.flaticon.com/)
-* [CSS Buttons](https://getcssscan.com/css-buttons-examples)
 * [Responsive design](https://youtu.be/HbBMp6yUXO0?si=ewkSnuy17KrDCHoW)
 * [css box shadow](https://getcssscan.com/css-box-shadow-examples)
 * [dynamic text](https://alvarotrigo.com/blog/css-text-animations/)
 
 
 # 🧊 Ice Box  
-- [x] Responsive Design
-- [ ] Create Add Friends Feature
-- [ ] Add Map Integration
-- [ ] Add Current Weather Feature
+- [ ] Responsive Design
+- [ ] Add Search Box
+- [ ] Add MUI
 - [ ] Confetti
 
 
