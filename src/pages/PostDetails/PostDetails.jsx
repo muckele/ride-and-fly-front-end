@@ -35,6 +35,17 @@ const PostDetails = (props) => {
     setMessageFormData({text: ''})
   }
 
+  // const handleAcceptRide = async () => {
+  //   const profileId = currentUserProfileId
+  //   const tripId = tripDetails._id
+
+  //   try {
+  //     const respomnse    
+  //   } catch (error) {
+      
+  //   }
+  // }
+
   
 
 
@@ -90,6 +101,11 @@ const PostDetails = (props) => {
         </>
         }
       </div>
+      <div>
+        {currentUserId !== postAuthorId && (
+          <button onClick={handleCreateTrip}>Confirm Ride Share</button>
+        )}
+    </div>
   </main>
   )
 }
