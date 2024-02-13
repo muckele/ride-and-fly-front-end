@@ -28,6 +28,8 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 * # images
 * [Logo](https://www.shopify.com/tools/logo-maker/my-logos)
 * [cityscape](gemma.app)
+* # icons
+* [icon](https://remixicon.com/)
 * # css
 * [Copy-paste-css](https://copy-paste-css.com/)
 * [Flaticon](https://www.flaticon.com/)

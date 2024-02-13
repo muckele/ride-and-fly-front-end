@@ -1,12 +1,6 @@
-
 ul{
   display: flex;
   text-decoration: none;
-}
-
-nav{
-  position:fixed;
-  top:0;  
 }
 
 li {
@@ -18,7 +12,6 @@ li {
  list-style-type: none;
 }
 
-
 li > a {
   text-decoration: none;  
   color: white;
@@ -28,7 +21,7 @@ li > a:visited {
   color: white;
 }
 
-.logo {
-  height: 10%;
-  width: 10%;
+#logo{
+  width: 130px;
+  height: auto;
 }

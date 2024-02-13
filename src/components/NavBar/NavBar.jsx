@@ -1,13 +1,16 @@
 // npm modules
 import { NavLink } from 'react-router-dom'
 
+//assets
+import logo from '../../assets/images/logo.png'
+
 //  css 
 import '../NavBar/NavBar.css'
 
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className='nav-container'>
-
+      <NavLink to="/"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink>
       {user ?
         <ul>
           <li><NavLink to={`/profiles/${user.profile}`}>Profiles</NavLink></li>
