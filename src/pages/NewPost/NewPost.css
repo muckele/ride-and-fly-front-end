@@ -2,12 +2,15 @@ form {
   margin-top: 80px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 50px;
+  border-radius: 5px;
+  font-size: 1.1rem;
 }
 
 .form-row {
   display: flex;
   align-items: center;
   margin: 10px;
+  padding: 0 2rem;
 }
 
 .newpost-container{
@@ -16,17 +19,18 @@ form {
   padding: 28px 21px;
   align-items: center;
   flex-direction: column;
-
+  padding: 2rem;
 }
 
 .newpost-container input, textarea, select{ 
   width: 100%;
-  padding: 14px;
-  font-size: 14px;
+  padding: 0.5rem;
+  font-size: 1rem;
   resize: vertical;
   border-radius: 5px;
   margin: 7px 0px 14px 0px;
-  border: 3px solid rgb(138,222,255);
+  border: none;
+  outline: none;
   font-family:  sans-serif;
 }
 

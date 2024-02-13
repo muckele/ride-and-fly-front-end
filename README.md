@@ -3,9 +3,9 @@
 
 ![Alt Text](./public/images/Unit%202.png)
 
-*Ride & FLy* is your hassel-free solution to rider and share your way to airport. This is the app where you can share your journey and fun with fellow buddies as well as the expense.
+*Ride & FLy* is your hassel-free solution to rider and share your way to airport. This is the app where you can share your journey and fun with fellow buddies as well as the expenses.
 
-So what inspires us to build *Ride & Fly* is that avid travellers, we are tired of the stress and expenses of getting to the aitport. So say good bye to the days of costly cab rides and cumbersome luggae struggles. *Ride & FLy* will address the failed promise from copmanies like Uber and Lyft where there would be fewer cars on the road, namely fewer carbon emission and fewer car crashes. 
+What inspires us to build *Ride & Fly* is that as avid travelers, we are tired of the stress and expenses of getting to the aitport. So say good bye to the days of costly cab rides and cumbersome luggae struggles. *Ride & FLy* will address the failed promise from copmanies like Uber and Lyft, where there would be fewer cars on the road, namely fewer carbon emission and fewer car crashes. 
 
 ## **[Trello Board](https://trello.com/b/nWhXMytP/ride-and-fly)**
 
@@ -14,7 +14,6 @@ So what inspires us to build *Ride & Fly* is that avid travellers, we are tired 
 * <a>![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)</a>
 * <a>![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)</a>
 * <a>![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white)</a>
-* <a>![React Hook Form](https://img.shields.io/badge/React%20Hook%20Form-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)</a>
 * <a>![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)</a>
 * <a> ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)</a>
 * <a>![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)</a>
@@ -27,22 +26,23 @@ So what inspires us to build *Ride & Fly* is that avid travellers, we are tired 
 
 # 💌 Attributions 
 * # images
-* [PickleTimeLogo](https://www.shutterstock.com/image-vector/powerful-smash-shot-execution-vector-icon-2376962975)
-* [Pickleball_xl](https://www.self.com/story/basic-pickleball-rules-beginners)
+* [Logo](https://www.shopify.com/tools/logo-maker/my-logos)
+* [cityscape](gemma.app)
+* # icons
+* [icon](https://remixicon.com/)
 * # css
 * [Copy-paste-css](https://copy-paste-css.com/)
 * [Flaticon](https://www.flaticon.com/)
-* [CSS Buttons](https://getcssscan.com/css-buttons-examples)
 * [Responsive design](https://youtu.be/HbBMp6yUXO0?si=ewkSnuy17KrDCHoW)
 * [css box shadow](https://getcssscan.com/css-box-shadow-examples)
+* [responsive web design](https://youtu.be/3gbA350zvbg?si=xmkqRALJmmNLNDH_)
 * [dynamic text](https://alvarotrigo.com/blog/css-text-animations/)
 
 
 # 🧊 Ice Box  
-- [x] Responsive Design
-- [ ] Create Add Friends Feature
-- [ ] Add Map Integration
-- [ ] Add Current Weather Feature
+- [ ] Responsive Design
+- [ ] Add Search Box
+- [ ] Add MUI
 - [ ] Confetti
 
 
