@@ -179,7 +179,7 @@ function App() {
           path="/trips" 
           element={
             <ProtectedRoute user={user}>
-              <TripDetails />
+              <TripDetails user={user}/>
             </ProtectedRoute>
           } 
         />

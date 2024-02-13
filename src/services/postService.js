@@ -71,6 +71,8 @@ async function deletePost(postId) {
   }
 }
 
+
+
 export {
   index,
   show,
