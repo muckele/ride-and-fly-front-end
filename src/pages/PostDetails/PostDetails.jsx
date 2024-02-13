@@ -1,9 +1,13 @@
 // npm modules 
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 
 //services
 import * as postService from '../../services/postService'
+
+//pages
+import { createTrip } from '../../services/tripService'
+
 
 // css
 import './PostDetails.css'
@@ -11,6 +15,8 @@ import './PostDetails.css'
 const PostDetails = (props) => {
   const { postId } = useParams()
   const [post, setPost] = useState(null)
+  const navigate = useNavigate();
+
 
   const [messageFormData, setMessageFormData] = useState({text: ''})
   
@@ -35,16 +41,23 @@ const PostDetails = (props) => {
     setMessageFormData({text: ''})
   }
 
-  // const handleAcceptRide = async () => {
-  //   const profileId = currentUserProfileId
-  //   const tripId = tripDetails._id
+  async function handleCreateTrip() {
+    const currentUserProfile = props.currentUser
+    const authorProfile = post.author
+    const updatedCarPal = [...props.carPal, currentUserProfile, authorProfile]
+    props.setCarPal(updatedCarPal)
+    const trip = {
+      postDetails: post,
+      participants: [currentUserProfile, authorProfile],
+    }
+    try {
+      const response = await yourApiService.createTrip(trip)
+      navigate('/trips')
+  } catch (error) {
+    console.error("Failed to create trip", error);
+  }
+}
 
-  //   try {
-  //     const respomnse    
-  //   } catch (error) {
-      
-  //   }
-  // }
 
   
 
