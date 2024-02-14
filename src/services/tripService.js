@@ -32,7 +32,7 @@ async function createReview(tripId, reviewFormData) {
 
 async function createTrip(tripFormData) {
   try {
-    const res = await fetch(`${BASE_URL}/trips`, {
+    const res = await fetch(BASE_URL, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${tokenService.getToken()}`,

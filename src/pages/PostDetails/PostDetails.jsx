@@ -15,7 +15,8 @@ import './PostDetails.css'
 const PostDetails = (props) => {
   const { postId } = useParams()
   const [post, setPost] = useState(null)
-  const navigate = useNavigate();
+  const navigate = useNavigate()
+
 
 
   const [messageFormData, setMessageFormData] = useState({text: ''})
@@ -42,17 +43,17 @@ const PostDetails = (props) => {
   }
 
   async function handleCreateTrip() {
-    const currentUserProfile = props.currentUser
-    const authorProfile = post.author
-    const updatedCarPal = [...props.carPal, currentUserProfile, authorProfile]
-    props.setCarPal(updatedCarPal)
+    const profileId = props.profileId
+    const postAuthorId = post.author[0]._id
+    const carPal = [profileId, postAuthorId]
+    props.setCarPal(carPal)
     const trip = {
       postDetails: post,
-      participants: [currentUserProfile, authorProfile],
+      participants: [profileId, postAuthorId],
     }
     try {
-      const response = await yourApiService.createTrip(trip)
-      navigate('/trips')
+      await createTrip(trip)
+      navigate(`${BASE_URL}/trips`)
   } catch (error) {
     console.error("Failed to create trip", error);
   }
@@ -115,10 +116,10 @@ const PostDetails = (props) => {
         }
       </div>
       <div>
-        {currentUserId !== postAuthorId && (
+        {post.author[0]._id !== props.user.profile && (
           <button onClick={handleCreateTrip}>Confirm Ride Share</button>
         )}
-    </div>
+      </div>
   </main>
   )
 }
