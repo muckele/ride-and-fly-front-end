@@ -8,12 +8,12 @@ const PostCard = ( {post} ) => {
 
 
   return (
-    <div>
-      <Link to={`/posts/${post._id}`}>
-        <span>
+    <div className='outer-postcard-container'>
+      
+        {/* <span>
           <h1>{post.createdAt}</h1>
-        </span>
-      </Link>
+        </span> */}
+        <Link to={`/posts/${post._id}`}>
       <div className='postcard-container'>
       <ul>
         <li>User name: {post.author[0].name}</li>
@@ -28,6 +28,7 @@ const PostCard = ( {post} ) => {
         <li>Car Type: {post.carType}</li>
       </ul>
       </div>
+      </Link>
     </div>
   )
 }
