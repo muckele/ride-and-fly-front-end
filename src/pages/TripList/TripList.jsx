@@ -1,20 +1,55 @@
+// npm modules 
+import { useState, useEffect } from "react"
+// import { useParams, Link, useNavigate } from "react-router-dom"
+
+// services
+import { index as fetchTrips } from './services/tripService'
+import * as tripService from '../../services/tripService'
+
 // css
 import './TripList.css'
 
-// components
-import PostCard from '../../components/PostCard/PostCard'
 
 
 
-const TripList = (props) => {
+
+const TripList = () => {
+  const [trips, setTrips] = useState([])
+  useEffect(() => {
+    const getTrips = async () => {
+      try {
+        const allTrips = await fetchTrips()
+        setTrips(allTrips)
+      } catch (error) {
+        ('Error fetching trips:', error)
+      }
+    }
+    getTrips()
+  }, [])
+
   return ( 
-    <main className='triplist-container'>
-      <h1><i className="ri-roadster-fill"></i> Active Trips:</h1>
-      {props.posts.map(post => (
-        <PostCard key={post._id} post={post} user={props.user} />
-      ))}
-    </main>
+    <div>
+      <h1>Active Trips</h1>
+      <ul>
+        {trips.map((trip) => (
+          <li key={trip._id}>
+            {/* Display trip information here. Example: */}
+            Post ID: {trip.post}, Car Pals: {trip.carPals.map(pal => pal._id).join(', ')}
+            {/* Add more trip details as needed */}
+          </li>
+        ))}
+      </ul>
+    </div>
   )
 }
+  
+  export default TripList
 
-export default TripList
+
+
+
+
+
+
+
+
