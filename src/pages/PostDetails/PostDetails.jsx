@@ -19,8 +19,6 @@ const PostDetails = (props) => {
   const [post, setPost] = useState(null)
   const navigate = useNavigate()
 
-
-
   const [messageFormData, setMessageFormData] = useState({text: ''})
   
   const handleChange = evt => {
@@ -29,17 +27,11 @@ const PostDetails = (props) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-
-
     const messageData = {
       ...messageFormData,
-      originalPost: postId,
+      relatedPost: postId,
       recipient: post.author[0]._id
-
     }
-
-    console.log(messageData);
-
     props.handleSendMessage(messageData)
     setMessageFormData({text: ''})
   }
@@ -61,10 +53,6 @@ const PostDetails = (props) => {
   }
 }
 
-
-  
-
-
   useEffect(() => {
     const fetchPost = async () => {
       const data = await postService.show(postId)
@@ -74,8 +62,6 @@ const PostDetails = (props) => {
   }, [postId])
 
   if (!post) return <h1>Loading, please wait!</h1>
-  
-
 
   return (
     <main>
