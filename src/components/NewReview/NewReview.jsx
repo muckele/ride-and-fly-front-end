@@ -1,5 +1,7 @@
 // npm imports
 import { useState } from "react"
+import * as React from 'react';
+import Rating from '@mui/material/Rating';
 
 // css
 import './NewReview.css'
@@ -17,9 +19,24 @@ const NewReview = (props) => {
     setFormData({ text: '' })
   }
 
+  // mui rating   
+   const [value, setValue] = React.useState(0);
+
   return (
     <form className="container" onSubmit={handleSubmit}>
       <label htmlFor="review-input">Review:</label>
+
+      {/* rating */}
+      <Rating
+        name="simple-controlled"
+        value={value}
+        onChange={(event, newValue) => {
+          setValue(newValue);
+        }}
+        
+      />
+
+
       <textarea
         name="review"
         value={formData.review}
