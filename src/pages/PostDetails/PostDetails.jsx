@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/trips`
+
 
 // npm modules 
 import { useState, useEffect } from "react"
@@ -18,7 +18,6 @@ const PostDetails = (props) => {
   const { postId } = useParams()
   const [post, setPost] = useState(null)
   const navigate = useNavigate()
-
   const [messageFormData, setMessageFormData] = useState({text: ''})
   
   const handleChange = evt => {
@@ -37,17 +36,17 @@ const PostDetails = (props) => {
   }
 
   async function handleCreateTrip() {
-    const profileId = props.profileId
+    const profileId = props.user._id
     const postAuthorId = post.author[0]._id
     const carPals = [profileId, postAuthorId]
-    // const carPal= (carPal)
     const trip = {
-      postDetails: post,
+      post: post,
       carPals: carPals,
     }
+    console.log(trip)
     try {
       await createTrip(trip)
-      navigate(BASE_URL)
+      navigate('/trips')
   } catch (error) {
     console.error("Failed to create trip", error);
   }
