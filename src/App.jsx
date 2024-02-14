@@ -15,6 +15,7 @@ import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 import TripDetails from './pages/TripDetails/TripDetails'
+import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
 
 
 // components
@@ -28,6 +29,7 @@ import * as postService from './services/postService'
 import * as profileService from './services/profileService'
 import * as messageService from './services/messageService'
 import * as tripService from './services/tripService'
+// import * as convoService from './services/convoService'
 
 // styles
 import './App.css'
@@ -176,9 +178,10 @@ function App() {
         />
         <Route 
           path="/inbox" 
+          // have to pass conversations as a prop, which means i have to set state to pull all conversations. convert messages to conversations for inbox
           element={
             <ProtectedRoute user={user}>
-              <Inbox messages={messages} />
+              <Inbox />
             </ProtectedRoute>
           } 
         />
@@ -187,6 +190,14 @@ function App() {
           element={
             <ProtectedRoute user={user}>
               <TripDetails handleCreateTrip={handleCreateTrip}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/conversations/:conversationId" 
+          element={
+            <ProtectedRoute user={user}>
+              <ConversationDetails messages={messages}/>
             </ProtectedRoute>
           } 
         />
