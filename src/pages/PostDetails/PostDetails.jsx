@@ -43,7 +43,6 @@ const PostDetails = (props) => {
       post: post,
       carPals: carPals,
     }
-    console.log(trip)
     try {
       await createTrip(trip)
       navigate('/trips')
