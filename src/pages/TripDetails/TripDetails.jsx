@@ -18,12 +18,13 @@ const TripDetails = (props) => {
     setTrip({...trip,reviews: [...trip.reviews, newReview]})
   }
   return ( 
-    <>
+    <div>
     <section>
-      <h1>Reviews</h1>
+      <h2>Trip Detail</h2>
+      <h2>Reviews</h2>
       <NewReview handleAddReview={handleAddReview} />
     </section>
-    </>
+    </div>
   )
 }
 export default TripDetails
