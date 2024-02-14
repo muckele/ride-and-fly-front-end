@@ -14,7 +14,7 @@ async function showConvo(conversationId) {
   }
 }
 
-async function index() {
+async function allConvos() {
   try {
     const res = await fetch(BASE_URL, {
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
@@ -27,5 +27,5 @@ async function index() {
 
 export{
   showConvo,
-  index
+  allConvos
 }
