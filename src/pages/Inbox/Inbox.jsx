@@ -1,6 +1,6 @@
 
 //components
-import MessageCard from '../../components/MessageCard/MessageCard'
+import ConversationCard from '../../components/ConversationCard/ConversationCard'
 
 //css
 import '../Inbox/Inbox.css'
@@ -11,8 +11,8 @@ const Inbox = (props) => {
   return ( 
     <div className='inbox-container'>
       <h1>Inbox</h1>
-      {props.messages.map((message) => (
-        <MessageCard key={message._id} message={message}/>
+      {props.conversations.map((conversation) => (
+        <ConversationCard key={conversation._id} convo={conversation}/>
       ))}
       
     </div>
