@@ -82,7 +82,7 @@ const PostDetails = (props) => {
 
       <div className="message-body">
         <form onSubmit={handleSubmit}>
-          <label htmlFor="text-input">Text</label>
+          <label htmlFor="text-input"><i className="ri-chat-smile-2-line"></i>  Send A Message:</label>
           <textarea
             required
             type="text"

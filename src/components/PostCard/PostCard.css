@@ -1,4 +1,18 @@
+ul{
+  margin: 0;
+  width: 2200px;
+}
+
+
+.outer-postcard-container {
+  margin-bottom: 0;
+  
+}
+
 .postcard-container {
   background-color: rgba(51, 51, 51,0.8);
+  backdrop-filter: blur(5px);
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 2px solid #333333
 }
+
