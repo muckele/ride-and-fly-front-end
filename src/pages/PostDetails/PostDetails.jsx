@@ -65,9 +65,10 @@ const PostDetails = (props) => {
 
   return (
     <main>
-      <span>
+      {/* <span>
         <h1>{post.createdAt}</h1>
-      </span>
+      </span> */}
+      <h1>{post.author[0].name} looking for Carpal<br/>from {post.dropOff}to {post.airport}</h1>
       <div className="post-body">
         <ul>
           <li>{post.author[0].name}</li>
