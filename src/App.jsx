@@ -27,7 +27,7 @@ import * as authService from './services/authService'
 import * as postService from './services/postService'
 import * as profileService from './services/profileService'
 import * as messageService from './services/messageService'
-// import * as tripService from './services/tripService'
+import * as tripService from './services/tripService'
 
 // styles
 import './App.css'
@@ -37,6 +37,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const [profiles, setProfiles] = useState([])
   const [messages, setMessages] = useState([])
+  const [trips, setTrips] = useState([])
   const navigate = useNavigate()
 
   
@@ -96,6 +97,12 @@ function App() {
     const newMessage = await messageService.createMessage(messageFormData)
     setMessages([newMessage, ...messages])
     // navigate('/inbox')
+  }
+
+  const handleCreateTrip = async (tripFormData) => {
+    const newTrip = await tripService.create(tripFormData)
+    setPosts([newTrip, ...trips])
+    navigate('/trips')
   }
   
   return (
@@ -179,7 +186,7 @@ function App() {
           path="/trips" 
           element={
             <ProtectedRoute user={user}>
-              <TripDetails user={user}/>
+              <TripDetails handleCreateTrip={handleCreateTrip}/>
             </ProtectedRoute>
           } 
         />

@@ -1,9 +1,15 @@
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/trips`
+
 // npm modules 
 import { useState, useEffect } from "react"
-import { useParams, Link } from "react-router-dom"
+import { useParams, Link, useNavigate } from "react-router-dom"
 
 //services
 import * as postService from '../../services/postService'
+
+//pages
+import { createTrip } from '../../services/tripService'
+
 
 // css
 import './PostDetails.css'
@@ -11,6 +17,9 @@ import './PostDetails.css'
 const PostDetails = (props) => {
   const { postId } = useParams()
   const [post, setPost] = useState(null)
+  const navigate = useNavigate()
+
+
 
   const [messageFormData, setMessageFormData] = useState({text: ''})
   
@@ -35,16 +44,23 @@ const PostDetails = (props) => {
     setMessageFormData({text: ''})
   }
 
-  // const handleAcceptRide = async () => {
-  //   const profileId = currentUserProfileId
-  //   const tripId = tripDetails._id
+  async function handleCreateTrip() {
+    const profileId = props.profileId
+    const postAuthorId = post.author[0]._id
+    const carPals = [profileId, postAuthorId]
+    // const carPal= (carPal)
+    const trip = {
+      postDetails: post,
+      carPals: carPals,
+    }
+    try {
+      await createTrip(trip)
+      navigate(BASE_URL)
+  } catch (error) {
+    console.error("Failed to create trip", error);
+  }
+}
 
-  //   try {
-  //     const respomnse    
-  //   } catch (error) {
-      
-  //   }
-  // }
 
   
 
@@ -102,10 +118,10 @@ const PostDetails = (props) => {
         }
       </div>
       <div>
-        {currentUserId !== postAuthorId && (
+        {post.author[0]._id !== props.user.profile && (
           <button onClick={handleCreateTrip}>Confirm Ride Share</button>
         )}
-    </div>
+      </div>
   </main>
   )
 }

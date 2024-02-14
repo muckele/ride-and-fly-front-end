@@ -30,7 +30,25 @@ async function createReview(tripId, reviewFormData) {
   }
 }
 
+async function createTrip(tripFormData) {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(tripFormData)
+    });
+    return res.json()
+  } catch (error) {
+    console.error("Failed to create trip", error)
+  }
+}
+
+
 export {
   createReview,
-  index
+  index,
+  createTrip
 }
