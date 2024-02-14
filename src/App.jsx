@@ -29,7 +29,7 @@ import * as postService from './services/postService'
 import * as profileService from './services/profileService'
 import * as messageService from './services/messageService'
 import * as tripService from './services/tripService'
-// import * as convoService from './services/convoService'
+import * as convoService from './services/convoService'
 
 // styles
 import './App.css'
@@ -39,6 +39,7 @@ function App() {
   const [posts, setPosts] = useState([])
   const [profiles, setProfiles] = useState([])
   const [messages, setMessages] = useState([])
+  const [conversations, setConversations] = useState([])
   const [trips, setTrips] = useState([])
   const navigate = useNavigate()
 
@@ -49,6 +50,14 @@ function App() {
       setMessages(data)
     }
     if (user) fetchMessages()
+  }, [user])
+
+  useEffect (() => {
+    const fetchConvos = async () => {
+      const data = await convoService.allConvos()
+      setConversations(data)
+    }
+    if (user) fetchConvos()
   }, [user])
 
 
@@ -181,7 +190,7 @@ function App() {
           // have to pass conversations as a prop, which means i have to set state to pull all conversations. convert messages to conversations for inbox
           element={
             <ProtectedRoute user={user}>
-              <Inbox messages={messages} />
+              <Inbox messages={messages} conversations={conversations} />
             </ProtectedRoute>
           } 
         />

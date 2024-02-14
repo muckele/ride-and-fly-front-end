@@ -1,7 +1,15 @@
-const ConversationCard = () => {
+
+
+
+const ConversationCard = ( { conversation } ) => {
   return ( 
     <div>
-      <h1>Conversation</h1>
+      <div >
+        <h1>hi</h1>
+        {/* <p>To:{conversation.recipient.name}</p> */}
+        {/* <p>From:{conversation.messageAuthor.name}</p> */}
+        {/* <p>Text: {conversation.text}</p>  */}
+      </div>
     </div>
   )
 }
