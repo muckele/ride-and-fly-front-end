@@ -5,28 +5,40 @@ import { useParams } from "react-router-dom"
 //services
 import * as convoService from '../../services/convoService'
 
+//css
+import '../ConversationDetails/ConversationDetails.css'
+
+//components
+import Messages from "../../components/Messages/Messages"
+import NewMessage from "../../components/NewMessage/NewMessage"
+
 
 const ConversationDetails = (props) => {
   const { conversationId } = useParams()
-  const [messages, setMessages] = useState([])
-  const [newMessage, setNewMessage] = useState('')
+  const [conversation, setConversation] = useState([])
+  // const [newMessage, setNewMessage] = useState('')
 
   useEffect(() => {
     const fetchConvo = async () => {
       const data = await convoService.showConvo(conversationId)
-      setMessages(data)
+      setConversation(data)
     }
     fetchConvo()
   }, [conversationId])
 
+  // const handleSendMessage = async (messageFormData) => {
+  //   const newMessage = await messageService.createMessage(messageFormData)
+  //   setConversation([ ...conversation, messages: [...conversation.messages, newMessage]])
+  //   // navigate('/inbox')
+  // }
+
   return ( 
     <div>
       <h2>Conversation</h2>
-      {props.messages.map(message => (
-        <p key={message._id}>{message.text}</p> 
-      ))}
-      {/* <textarea value={newMessage} onChange={(e) => setNewMessage(e.target.value)} />
-      <button onClick={sendMessage}>Send</button> */}
+      <Messages conversation={conversation}/>
+      <NewMessage handleSendMessage={props.handleSendMessage} conversationId={conversationId}/>
+      
+   
     </div> 
   )
 }

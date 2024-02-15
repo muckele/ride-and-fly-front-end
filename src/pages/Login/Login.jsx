@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // css
-import styles from './Login.module.css'
+import './Login.css'
 
 const LoginPage = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
@@ -44,12 +44,13 @@ const LoginPage = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main >
       <h1>Log In</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
-          Email
+      <p >{message}</p>
+      <form autoComplete="off" onSubmit={handleSubmit} >
+        <div className='form-row'>
+        <label >
+          Email:
           <input
             type="text"
             value={email}
@@ -57,8 +58,11 @@ const LoginPage = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
-        <label className={styles.label}>
-          Password
+        </div>
+
+        <div className='form-row'>
+        <label >
+          Password:
           <input
             type="password"
             value={password}
@@ -66,10 +70,11 @@ const LoginPage = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
+        </div>
         <div>
-          <Link to="/">Cancel</Link>
-          <button className={styles.button} disabled={isFormInvalid()}>
-            Log In
+          <Link to="/">Cancel</Link><br/>
+          <button  id ="login-btn" disabled={isFormInvalid()}>
+          <i className="ri-login-box-line"></i>  Log In
           </button>
         </div>
       </form>

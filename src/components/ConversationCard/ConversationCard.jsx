@@ -1,16 +1,26 @@
-
-
+//npm modules
+import { Link } from 'react-router-dom';
+//css
+import '../ConversationCard/ConversationCard.css'
 
 const ConversationCard = ( { conversation } ) => {
+
+  // if (!props.conversation?.messages) {
+  //   return <div>Loading...</div>;
+  // }
+
+  
   return ( 
-    <div>
-      <div >
-        <h1>hi</h1>
-        {/* <p>To:{conversation.recipient.name}</p> */}
-        {/* <p>From:{conversation.messageAuthor.name}</p> */}
-        {/* <p>Text: {conversation.text}</p>  */}
+    <Link to={`/conversations/${conversation._id}`}>
+
+      <div className='conversation'>
+        <p>hi</p>
+        <p>To:{conversation.recipient.name}</p>
+        <p>From:{conversation.messageAuthor.name}</p>
+        
       </div>
-    </div>
+    </Link>
+    
   )
 }
  

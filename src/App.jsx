@@ -196,10 +196,9 @@ function App() {
         />
         <Route 
           path="/inbox" 
-          // have to pass conversations as a prop, which means i have to set state to pull all conversations. convert messages to conversations for inbox
           element={
             <ProtectedRoute user={user}>
-              <Inbox messages={messages} conversations={conversations} />
+              <Inbox conversations={conversations} />
             </ProtectedRoute>
           } 
         />
@@ -223,7 +222,7 @@ function App() {
           path="/conversations/:conversationId" 
           element={
             <ProtectedRoute user={user}>
-              <ConversationDetails messages={messages}/>
+              <ConversationDetails handleSendMessage={handleSendMessage}/>
             </ProtectedRoute>
           } 
         />

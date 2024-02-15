@@ -26,16 +26,19 @@ const Profiles = () => {
   }
   return (
     <main className="profile-container">
+    
       <h1>Profile</h1>
-      <p>{userProfile.name}</p>
+      <div className='profile-content'>
+      <p>User name: <br/>{userProfile.name}</p><br/>
       <img src={userProfile.photo} alt="A sexy image" />
-      <p>{userProfile.bio}</p>
-      <p>{userProfile.funFacts}</p>
+      <p>Bio: <br/>{userProfile.bio}</p><br/>
+      <p>Funfacts: <br/>{userProfile.funFacts}</p><br/>
+      <p>Post History: </p>
       {userProfile.posts.map(post=> 
         <p key={userProfile._id}>{post}</p>
       )}
-      
-      <Link to={`/profiles/${profileId}/edit`} state={userProfile}>EDIT</Link>
+      <Link to={`/profiles/${profileId}/edit`} state={userProfile}><i className="ri-pencil-line"></i>  EDIT</Link>
+      </div>
     </main>
   
   )
