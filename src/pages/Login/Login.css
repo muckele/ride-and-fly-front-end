@@ -45,3 +45,9 @@ input[type="file"] {
 .form > label:last-of-type {
   margin-bottom: 16px;
 }
+
+#login-btn {
+  text-align: center;
+  width: 100px;
+  margin: auto;
+}

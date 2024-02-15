@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import * as authService from '../../services/authService'
 
 // css
-import styles from './Signup.module.css'
+import './Signup.css'
 
 const Signup = ({ handleAuthEvt }) => {
   const navigate = useNavigate()
@@ -80,15 +80,17 @@ const Signup = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main >
       <h1>Sign Up</h1>
-      <p className={styles.message}>{message}</p>
-      <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <label className={styles.label}>
+      <p >{message}</p>
+      <form autoComplete="off" onSubmit={handleSubmit} >
+        <div className='form-row'>
+        <label >
           Name
           <input type="text" value={name} name="name" onChange={handleChange} />
-        </label>
-        <label className={styles.label}>
+        </label></div>
+        <div className='form-row'>
+        <label >
           Email
           <input
             type="text"
@@ -96,8 +98,9 @@ const Signup = ({ handleAuthEvt }) => {
             name="email"
             onChange={handleChange}
           />
-        </label>
-        <label className={styles.label}>
+        </label></div>
+        <div className='form-row'>
+        <label >
           Password
           <input
             type="password"
@@ -106,7 +109,9 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
-        <label className={styles.label}>
+        </div> 
+        <div className='form-row'>
+        <label >
           Confirm Password
           <input
             type="password"
@@ -115,9 +120,10 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
         </label>
+        </div>
 
-
-        <label className={styles.label}>
+        <div className='form-row'>
+        <label >
           Fun Facts
           <input
             type="text"
@@ -125,7 +131,9 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
           </label>
-          <label className={styles.label}>
+          </div>
+          <div className='form-row'>
+          <label >
           Bio
           <input
             type="text"
@@ -133,9 +141,10 @@ const Signup = ({ handleAuthEvt }) => {
             onChange={handleChange}
           />
           </label>
+          </div>
 
-
-        <label className={styles.label}>
+          <div className='form-row'>
+        <label >
           Upload Photo
           <input 
             type="file" 
@@ -144,10 +153,11 @@ const Signup = ({ handleAuthEvt }) => {
             ref={imgInputRef}
           />
         </label>
+        </div>
         <div>
           <Link to="/">Cancel</Link>
-          <button
-            className={styles.button}
+          <button   
+            id="signup-btn"      
             disabled={ isFormInvalid() || isSubmitted }
           >
             {!isSubmitted ? 'Sign Up' : '🚀 Sending...'}

@@ -11,6 +11,7 @@ form {
   align-items: center;
   margin: 10px;
   padding: 0 2rem;
+  justify-content: center;
 }
 
 .newpost-container{
@@ -20,6 +21,7 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 2rem;
+  text-align: center;
 }
 
 .newpost-container input, textarea, select{ 
@@ -51,6 +53,7 @@ form {
   font-weight: 700;
   color: white;
   line-height: 26px;
+  margin-right: 100px;
 }
 
 
