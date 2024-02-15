@@ -1,6 +1,8 @@
 // npm modules
 import { Link } from 'react-router-dom'
 
+import { }
+
 // css 
 import './TripCard.css'
 
@@ -23,6 +25,7 @@ const TripCard = ( {trip} ) => {
         <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
         <li>Car Type: {trip.post.carType}</li>
       </ul>
+      <button onClick={() => trip.onComplete(trip.id)}>Complete Trip</button>
       </div>
       {/* </Link> */}
     </div>

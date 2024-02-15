@@ -10,8 +10,8 @@ import './NewReview.css'
 const NewReview = (props) => {
   const [formData, setFormData] = useState({ text: '' })
   // mui rating   
-  const [value, setValue] = React.useState(0);
-  console.log(value)
+  // const [value, setValue] = React.useState(0);
+  // console.log(value)
 
 
   const handleChange = (evt) => {
@@ -33,7 +33,7 @@ const NewReview = (props) => {
         name="rating-input"
         value={formData.rating}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setFormData(newValue);
         }}
       />
       </div>
