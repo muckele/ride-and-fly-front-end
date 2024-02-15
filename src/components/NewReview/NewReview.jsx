@@ -25,9 +25,6 @@ const NewReview = (props) => {
     setFormData({ text: '' })
   }
 
-  // mui rating   
-  // const [value, setValue] = React.useState(0);
-
   return (
     <form className="container" onSubmit={handleSubmit}>
       <div className="form-row">
