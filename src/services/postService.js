@@ -71,6 +71,21 @@ async function deletePost(postId) {
   }
 }
 
+async function createReview(postId, reviewFromData) {
+  try {
+    const res = await fetch(`${BASE_URL}/${postId}/reviews`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(reviewFromData)
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
 
 
 export {
@@ -79,4 +94,5 @@ export {
   create,
   update,
   deletePost,
+  createReview
 }
