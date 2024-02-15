@@ -6,3 +6,7 @@
 #delete-button {
   width: 100px;
 }
+
+.create-trip-btn {
+  margin-top: -50px;
+}

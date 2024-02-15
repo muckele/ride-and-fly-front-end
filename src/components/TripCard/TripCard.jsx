@@ -12,16 +12,16 @@ const TripCard = ( {trip} ) => {
         {/* <Link to={`/trips/${trip._id}`}> */}
       <div className='postcard-container'>
       <ul>
-        <li>User name: {trip.author[0].name}</li>
-        <li>Date/Time: {trip.date}</li>
-        <li>Airport: {trip.airport}</li>
-        <li>Terminal: {trip.terminal}</li>
-        <li>Dropoff: {trip.dropOff} </li>
-        <li>Party size: {trip.partySize}</li>
-        <li>Luxury Car: {trip.luxuryCar ? 'Yes' : 'No'}</li>
-        <li>Oversized Luggage: {trip.oversizedLuggage ? 'Yes' : 'No'}</li>
-        <li>Traveling with a Pet: {trip.travelingWithPet ? 'Yes' : 'No'}</li>
-        <li>Car Type: {trip.carType}</li>
+        {/* <li>User name: {trip.carPal.name}</li> */}
+        <li>Date/Time: {trip.post.date}</li>
+        <li>Airport: {trip.post.airport}</li>
+        <li>Terminal: {trip.post.terminal}</li>
+        <li>Dropoff: {trip.post.dropOff} </li>
+        <li>Party size: {trip.post.partySize}</li>
+        <li>Luxury Car: {trip.post.luxuryCar ? 'Yes' : 'No'}</li>
+        <li>Oversized Luggage: {trip.post.oversizedLuggage ? 'Yes' : 'No'}</li>
+        <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
+        <li>Car Type: {trip.post.carType}</li>
       </ul>
       </div>
       {/* </Link> */}
