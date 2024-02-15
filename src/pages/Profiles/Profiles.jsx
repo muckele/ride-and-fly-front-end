@@ -27,7 +27,7 @@ const Profiles = () => {
   return (
     <main className="profile-container">
     
-      <h1>Profile</h1>
+      <p id = "profile-title">Profile</p>
       <div className='profile-content'>
       <p>User name: <br/>{userProfile.name}</p><br/>
       <img src={userProfile.photo} alt="A sexy image" />
