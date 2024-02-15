@@ -1,21 +1,20 @@
 
 //npm modules
 import { useState } from "react"
-import { useParams } from "react-router-dom"
 
-const NewMessage = ({ handleSendMessage, conversationId}) => {
+
+const NewMessage = ({ handleSendMessage, conversationId }) => {
   
-  const [MessageformData, setMessageFormData] = useState({text: ''})
+  const [messageFormData, setMessageFormData] = useState({text: ''})
 
   const handleChange = evt => {
-    setMessageFormData({...MessageformData, [evt.target.name]: evt.target.value})
+    setMessageFormData({...messageFormData, [evt.target.name]: evt.target.value})
   }
 
   const handleSubmit = evt => {
     evt.preventDefault()
    
-    handleSendMessage({...MessageformData, conversationId})
-    console.log({...MessageformData, conversationId});
+    handleSendMessage({...messageFormData, conversationId})
     setMessageFormData({text: ''})
   }
 
@@ -26,7 +25,7 @@ const NewMessage = ({ handleSendMessage, conversationId}) => {
         name="text" 
         required
         placeholder="new message..."
-        value={MessageformData.text}
+        value={messageFormData.text}
         onChange={handleChange}
       />
       <button type="submit">Send Message</button>
