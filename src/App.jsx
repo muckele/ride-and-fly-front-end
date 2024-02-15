@@ -205,7 +205,7 @@ function App() {
           path="/conversations/:conversationId" 
           element={
             <ProtectedRoute user={user}>
-              <ConversationDetails />
+              <ConversationDetails handleSendMessage={handleSendMessage}/>
             </ProtectedRoute>
           } 
         />
