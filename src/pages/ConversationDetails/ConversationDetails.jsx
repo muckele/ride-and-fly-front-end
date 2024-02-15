@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 
 //services
 import * as convoService from '../../services/convoService'
+// import * as messageService from '../../services/messageService'
 
 //css
 import '../ConversationDetails/ConversationDetails.css'
@@ -16,7 +17,6 @@ import NewMessage from "../../components/NewMessage/NewMessage"
 const ConversationDetails = (props) => {
   const { conversationId } = useParams()
   const [conversation, setConversation] = useState([])
-  // const [newMessage, setNewMessage] = useState('')
 
   useEffect(() => {
     const fetchConvo = async () => {
@@ -26,12 +26,12 @@ const ConversationDetails = (props) => {
     fetchConvo()
   }, [conversationId])
 
-  // const handleSendMessage = async (messageFormData) => {
-  //   const newMessage = await messageService.createMessage(messageFormData)
-  //   setConversation([ ...conversation, messages: [...conversation.messages, newMessage]])
-  //   // navigate('/inbox')
+  // const handleNewMessage = async (messageFormData) => {
+  //   const newMessage = await messageService.createMessage(conversationId, messageFormData)
+  //   setConversation({...conversation, messages: [...conversation.messages, newMessage]})
   // }
 
+  if (!conversation) return <h1>Loading...</h1>
   return ( 
     <div>
       <h2>Conversation</h2>
