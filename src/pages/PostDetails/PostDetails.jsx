@@ -8,6 +8,10 @@ import * as postService from '../../services/postService'
 //pages
 import { createTrip } from '../../services/tripService'
 
+// compontents
+import NewReview from "../../components/NewReview/NewReview"
+// components
+import Reviews from "../../components/Reviews/Reviews"
 
 // css
 import './PostDetails.css'
@@ -31,6 +35,11 @@ const PostDetails = (props) => {
     }
     props.handleSendMessage(messageData)
     setMessageFormData({text: ''})
+  }
+  const handleAddReview = async (reviewFormData) => {
+    const newReview = await postService.createReview(postId, reviewFormData)
+    console.log(reviewFormData)
+    setPost({...post, reviews: [...post.reviews, newReview] })
   }
 
   async function handleCreateTrip() {
@@ -102,8 +111,13 @@ const PostDetails = (props) => {
       </div>
       <div className="create-trip-btn">
         {post.author[0]._id !== props.user.profile && (
-          <button onClick={handleCreateTrip}>Confirm Ride Share</button>
+          <button onClick={handleCreateTrip}>Confirm Ride Share</button> 
         )}
+        <section>
+        <h1>Reviews</h1>
+        <NewReview handleAddReview={handleAddReview} />
+        <Reviews reviews={post.reviews} user={props.user}/>
+        </section>  
       </div>
   </main>
   )

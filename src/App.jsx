@@ -14,7 +14,6 @@ import PostDetails from './pages/PostDetails/PostDetails'
 import EditPost from './pages/EditPost/EditPost'
 import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
-import TripDetails from './pages/TripDetails/TripDetails'
 import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
 import TripList from './pages/TripList/TripList'
 
@@ -214,7 +213,6 @@ function App() {
           path="/trips/:tripId"
           element={
             <ProtectedRoute user={user}>
-              <TripDetails trips={trips}/>
             </ProtectedRoute>
           } 
         />
