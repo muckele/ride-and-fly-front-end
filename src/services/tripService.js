@@ -57,10 +57,33 @@ async function showTrip(tripId) {
   }
 }
 
+const completeTrip = async (tripId) => {
+  try {
+    const response = await fetch(`${BASE_URL}/${tripId}`, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `Bearer ${tokenService.getToken()}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        isActive: false, 
+      }),
+    });
+    if (!response.ok) {
+      throw new Error('Failed to complete the trip')
+    }
+    const updatedTrip = await response.json()
+    console.log('Trip marked as complete:', updatedTrip)
+  } catch (error) {
+    console.error('Error completing the trip:', error)
+  }
+}
+
 
 export {
   createReview,
   index,
   createTrip,
-  showTrip
+  showTrip, 
+  completeTrip
 }
