@@ -1,13 +1,21 @@
 # Ride & Fly 
 ## Share Journey, Share Fun
 
-![Alt Text](./public/images/Unit%202.png)
+![Alt Text](./src/assets/images/ride&fly_app.png)
 
 *Ride & FLy* is your hassel-free solution to rider and share your way to airport. This is the app where you can share your journey and fun with fellow buddies as well as the expenses.
 
 What inspires us to build *Ride & Fly* is that as avid travelers, we are tired of the stress and expenses of getting to the aitport. So say good bye to the days of costly cab rides and cumbersome luggae struggles. *Ride & FLy* will address the failed promise from copmanies like Uber and Lyft, where there would be fewer cars on the road, namely fewer carbon emission and fewer car crashes. 
 
-## **[Trello Board](https://trello.com/b/nWhXMytP/ride-and-fly)**
+* ### [Trello Board](https://trello.com/b/nWhXMytP/ride-and-fly)
+* ### [Ride & Fly]()
+* ### [Github Back-end Repo](https://github.com/TheBerlinMan/ride-and-fly-back-end)
+
+# 🤝 Contributors
+* ### [Tommy](https://github.com/TheBerlinMan)
+* ### [Matt](https://github.com/muckele)
+* ### [Jia](https://github.com/daisy119)
+* ### [Asa](https://github.com/Asagutierrez)
 
 # 💻 Technologies used 
 
@@ -17,6 +25,7 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 * <a>![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)</a>
 * <a> ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)</a>
 * <a>![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)</a>
+* <a>![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)</a>
 * <a>![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)</a>
 * <a>![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)</a>
 * <a>![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD)</a>
@@ -24,18 +33,22 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 
 
 
+
 # 💌 Attributions 
 * # images
 * [Logo](https://www.shopify.com/tools/logo-maker/my-logos)
 * [cityscape](gemma.app)
+
 * # icons
 * [icon](https://remixicon.com/)
+
 * # css
 * [Copy-paste-css](https://copy-paste-css.com/)
 * [Flaticon](https://www.flaticon.com/)
 * [Responsive design](https://youtu.be/HbBMp6yUXO0?si=ewkSnuy17KrDCHoW)
 * [css box shadow](https://getcssscan.com/css-box-shadow-examples)
 * [responsive web design](https://youtu.be/3gbA350zvbg?si=xmkqRALJmmNLNDH_)
+* [MUI](https://mui.com/)
 * [dynamic text](https://alvarotrigo.com/blog/css-text-animations/)
 
 
