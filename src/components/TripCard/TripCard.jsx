@@ -12,7 +12,7 @@ const TripCard = ( {trip} ) => {
 
   return (
     <div className='outer-postcard-container'>
-        <Link to={`/trips/${trip._id}`}>
+      <Link to={`/trips/${trip._id}`}>
       <div className='postcard-container'>
       <ul>
         <li>User name: {trip.carPals[0].name}</li>
