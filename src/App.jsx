@@ -16,6 +16,7 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 import TripDetails from './pages/TripDetails/TripDetails'
 import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
+import TripList from './pages/TripList/TripList'
 
 
 // components
@@ -115,6 +116,14 @@ function App() {
     setPosts([newTrip, ...trips])
     navigate('/trips')
   }
+
+  useEffect(() => {
+    const fetchAllTrips = async () => {
+      const data = await tripService.index()
+      setTrips(data)
+    }
+    if (user) fetchAllTrips()
+  },[user])
   
   return (
     <div className='app-container'>
@@ -197,7 +206,15 @@ function App() {
           path="/trips" 
           element={
             <ProtectedRoute user={user}>
-              <TripDetails handleCreateTrip={handleCreateTrip}/>
+              <TripList handleCreateTrip={handleCreateTrip} trips={trips}/>
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/trips/:tripId"
+          element={
+            <ProtectedRoute user={user}>
+              <TripDetails trips={trips}/>
             </ProtectedRoute>
           } 
         />

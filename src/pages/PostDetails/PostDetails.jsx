@@ -1,5 +1,3 @@
-
-
 // npm modules 
 import { useState, useEffect } from "react"
 import { useParams, Link, useNavigate } from "react-router-dom"
@@ -43,7 +41,6 @@ const PostDetails = (props) => {
       post: post,
       carPals: carPals,
     }
-    console.log(trip)
     try {
       await createTrip(trip)
       navigate('/trips')

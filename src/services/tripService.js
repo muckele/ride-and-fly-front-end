@@ -5,7 +5,7 @@ const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/api/trips`
 
 async function index() {
   try {
-    const res = await fetch(BASE_URL, {
+    const res = await fetch(BASE_URL, { 
       headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
     })
     return res.json()
@@ -46,9 +46,21 @@ async function createTrip(tripFormData) {
   }
 }
 
+async function showTrip(tripId) {
+  try {
+    const res = await fetch(`${BASE_URL}/${tripId}`, {
+      headers: { 'Authorization': `Bearer ${tokenService.getToken()}` },
+    })
+    return res.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 export {
   createReview,
   index,
-  createTrip
+  createTrip,
+  showTrip
 }
