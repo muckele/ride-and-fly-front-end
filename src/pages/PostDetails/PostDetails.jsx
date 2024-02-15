@@ -76,6 +76,11 @@ const PostDetails = (props) => {
           <li>{post.partySize}</li>
         </ul>
       </div>
+      <div className="create-trip-btn">
+        {post.author[0]._id !== props.user.profile && (
+          <button onClick={handleCreateTrip}>Confirm Ride Share</button>
+        )}
+      </div>
 
       <div className="message-body">
         <form onSubmit={handleSubmit}>
@@ -100,11 +105,7 @@ const PostDetails = (props) => {
         </>
         }
       </div>
-      <div className="create-trip-btn">
-        {post.author[0]._id !== props.user.profile && (
-          <button onClick={handleCreateTrip}>Confirm Ride Share</button>
-        )}
-      </div>
+      
   </main>
   )
 }
