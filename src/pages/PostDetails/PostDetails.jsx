@@ -100,7 +100,7 @@ const PostDetails = (props) => {
         </>
         }
       </div>
-      <div>
+      <div className="create-trip-btn">
         {post.author[0]._id !== props.user.profile && (
           <button onClick={handleCreateTrip}>Confirm Ride Share</button>
         )}
