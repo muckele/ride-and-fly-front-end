@@ -1,55 +1,23 @@
-// npm modules 
-import { useState, useEffect } from "react"
-// import { useParams, Link, useNavigate } from "react-router-dom"
+// npm modules
+import { useState } from "react"
 
-// services
-import { index as fetchTrips } from './services/tripService'
-import * as tripService from '../../services/tripService'
+
+
+// components
+import TripCard from '../../components/TripCard/TripCard'
 
 // css
 import './TripList.css'
 
-
-
-
-
-const TripList = () => {
-  const [trips, setTrips] = useState([])
-  useEffect(() => {
-    const getTrips = async () => {
-      try {
-        const allTrips = await fetchTrips()
-        setTrips(allTrips)
-      } catch (error) {
-        ('Error fetching trips:', error)
-      }
-    }
-    getTrips()
-  }, [])
-
-  return ( 
-    <div>
-      <h1>Active Trips</h1>
-      <ul>
-        {trips.map((trip) => (
-          <li key={trip._id}>
-            {/* Display trip information here. Example: */}
-            Post ID: {trip.post}, Car Pals: {trip.carPals.map(pal => pal._id).join(', ')}
-            {/* Add more trip details as needed */}
-          </li>
-        ))}
-      </ul>
-    </div>
+const TripList = (props) => {
+  console.log(props.trips)
+  return (
+    <main>
+      {props.trips.map((trip) => (
+        <TripCard key={trip._id} trip={trip}  />
+      ))}
+    </main>
   )
 }
-  
-  export default TripList
 
-
-
-
-
-
-
-
-
+export default TripList

@@ -117,7 +117,7 @@ function App() {
     navigate('/trips')
   }
 
-    useEffect(() => {
+  useEffect(() => {
     const fetchAllTrips = async () => {
       const data = await tripService.index()
       setTrips(data)
@@ -207,7 +207,7 @@ function App() {
           path="/trips" 
           element={
             <ProtectedRoute user={user}>
-              <TripList handleCreateTrip={handleCreateTrip}/>
+              <TripList handleCreateTrip={handleCreateTrip} trips={trips}/>
             </ProtectedRoute>
           } 
         />
@@ -215,7 +215,7 @@ function App() {
           path="/trips/:tripId"
           element={
             <ProtectedRoute user={user}>
-              <TripDetails/>
+              <TripDetails trips={trips}/>
             </ProtectedRoute>
           } 
         />
