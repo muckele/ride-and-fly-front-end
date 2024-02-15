@@ -7,7 +7,7 @@ import * as tripService from '../../services/tripService'
 // css 
 import './TripCard.css'
 
-const TripCard = ( {trip} ) => {
+const TripCard = ( {trip, onComplete} ) => {
   console.log("This is trip in TripCard: ", trip)
 
   return (
@@ -26,8 +26,7 @@ const TripCard = ( {trip} ) => {
         <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
         <li>Car Type: {trip.post.carType}</li>
       </ul>
-//!Current IceBox Feature Being Worked On
-      {/* <button onClick={() => trip.onComplete(trip.id)}>Complete Trip</button> */}
+        <button onClick={() => onComplete(trip._id)}>Mark as Completed</button>
       </div>
       </Link>
     </div>
