@@ -16,7 +16,7 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
 import TripList from './pages/TripList/TripList'
-import TripCard from './components/TripCard/TripCard'
+
 
 
 // components

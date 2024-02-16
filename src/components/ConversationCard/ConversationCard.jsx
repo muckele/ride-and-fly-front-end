@@ -3,24 +3,22 @@ import { Link } from 'react-router-dom';
 //css
 import '../ConversationCard/ConversationCard.css'
 
-const ConversationCard = ( { conversation } ) => {
-
-  // if (!props.conversation?.messages) {
-  //   return <div>Loading...</div>;
-  // }
+const ConversationCard = ( { conversation , user} ) => {
 
   
-  return ( 
-    <Link to={`/conversations/${conversation._id}`}>
 
-      <div className='conversation'>
-        <p>hi</p>
-        <p>To:{conversation.recipient.name}</p>
-        <p>From:{conversation.messageAuthor.name}</p>
+  return ( 
+
+    <div className='conversation-card'>
+      <Link to={`/conversations/${conversation._id}`}>
         
-      </div>
-    </Link>
-    
+        <p>Created: {conversation.createdAt}</p>
+        <p>From:{(user.profile === conversation.messageAuthor._id) ? "Me" : conversation.messageAuthor.name}</p>
+        <p>To: {(user.profile === conversation.recipient._id) ? "Me" : conversation.recipient.name}</p>
+      
+      </Link>
+    </div>
+
   )
 }
  
