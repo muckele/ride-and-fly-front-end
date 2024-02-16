@@ -4,8 +4,7 @@ const Footer = () => {
   return (  
     <div className='footer-container'>
       <div id="footer-p">
-      <p>©2024. Copyright by RideandFly.com</p> <br/>
-      <p>Made with 💙 by Tommy, Matt, Jia & Asa</p> 
+      <p className='footer-p'>©2024 Copyright by Ride & Fly . Made with 💙 by Tommy, Matt, Jia & Asa </p> <br/>
     </div>
     </div>
   );

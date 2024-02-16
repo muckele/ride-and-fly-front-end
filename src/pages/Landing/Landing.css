@@ -27,8 +27,15 @@ h1{
   line-height: 4rem;
   color:  white;
   font-weight: 700;
+  
 }
 
 .content p{
   color:  white;
+  border-bottom: 1px solid white
+}
+
+#slogan-landing {
+  width: 700px;
+  margin-top: -10px;
 }

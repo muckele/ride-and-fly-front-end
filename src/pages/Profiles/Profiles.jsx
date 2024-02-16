@@ -5,6 +5,9 @@ import { useParams, Link } from "react-router-dom"
 // services
 import * as profileService from '../../services/profileService'
 
+//assets
+import profile from '../../assets/icons/profile.png'
+
 // css
 import './Profiles.css'
 
@@ -29,8 +32,8 @@ const Profiles = () => {
     
       <p id = "profile-title">Profile</p>
       <div className='profile-content'>
-      <p>User name: <br/>{userProfile.name}</p><br/>
-      <img src={userProfile.photo} alt="A sexy image" />
+      <h3><br/>{userProfile.name}</h3><br/>
+      <img className='profile-icon' src={userProfile.photo? userProfile.photo : profile} alt="A sexy image" /><br/>
       <p>Bio: <br/>{userProfile.bio}</p><br/>
       <p>Funfacts: <br/>{userProfile.funFacts}</p><br/>
       <p>Post History: </p>
@@ -39,6 +42,8 @@ const Profiles = () => {
       )}
       <Link to={`/profiles/${profileId}/edit`} state={userProfile}><i className="ri-pencil-line"></i>  EDIT</Link>
       </div>
+
+
     </main>
   
   )
