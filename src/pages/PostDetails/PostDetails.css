@@ -1,12 +1,50 @@
-.post-body {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: #333333;
+/* Corrected styling for the left column card */
+.left-column {
+  display: flex;
+  /* Use flexbox for layout within the card */
+  flex-direction: column;
+  /* Stack items vertically */
+  width: 48%;
+  /* Adjust width as needed */
+  margin-right: 2%;
+  /* Add spacing between columns */
 }
 
-#delete-button {
-  width: 100px;
+.left-column>section {
+  /* Apply card styles to the direct child sections */
+  background-color: #fff;
+  /* Or your desired card background color */
+  border-radius: 5px;
+  padding: 1rem;
+  /* Adjust padding as needed */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.create-trip-btn {
-  margin-top: -150px;
+/* Other adjustments for clarity */
+.post-details-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+  /* No need for flex-direction: row; as it's the default */
+}
+
+.post-header {
+  border-sizing: border-box;
+  /* Should be box-sizing */
+  margin-top: -25px;
+  width: 100vw;
+}
+
+/* Simplified column styles */
+.left-column,
+.right-column {
+  flex: 1;
+  /* Ensure both columns take equal space */
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  /* Ensure consistent vertical layout for smaller screens */
 }

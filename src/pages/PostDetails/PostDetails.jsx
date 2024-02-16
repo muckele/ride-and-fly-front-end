@@ -69,57 +69,63 @@ const PostDetails = (props) => {
   if (!post) return <h1>Loading, please wait!</h1>
 
   return (
-    <main>
-      {/* <span>
-        <h1>{post.createdAt}</h1>
-      </span> */}
-      <h1>{post.author[0].name} looking for Carpal<br/>from {post.dropOff}to {post.airport}</h1>
-      <div className="post-body">
-        <ul>
-          <li>{post.author[0].name}</li>
-          <li>{post.date}</li>
-          <li>{post.time}</li>
-          <li>{post.airport}</li>
-          <li>{post.terminal}</li>
-          <li>{post.dropOff}</li>
-          <li>{post.partySize}</li>
-        </ul>
-      </div>
-
-      <div className="message-body">
-        <form onSubmit={handleSubmit}>
-          <label htmlFor="text-input"><i className="ri-chat-smile-2-line"></i>  Send A Message:</label>
-          <textarea
-            required
-            type="text"
-            name="text"
-            id="text-input"
-            value={messageFormData.text}
-            onChange={handleChange}
-          />
-          <button>Send Message</button>
-        </form>
-      </div>
-
-      <div>
+    <>
+    <div className="post-header">
+        <h1>{post.author[0].name} looking for a carpal from {post.airport} to {post.dropOff}</h1>
+    </div>
+    <main className="post-details-container">
+      
+      <div className="left-column">
+        <section className="post-content">
+          <div className="post-info">
+            <ul>
+              <li>{post.author[0].name}</li>
+              <li>{post.date}</li>
+              <li>{post.time}</li>
+              <li>{post.airport}</li>
+              <li>{post.terminal}</li>
+              <li>{post.dropOff}</li>
+              <li>{post.partySize}</li>
+            </ul>
+          </div>
         {post.author[0]._id === props.user.profile &&
-        <>
-          <Link to={`/posts/${postId}/edit`} state={post}><i className="ri-pencil-line"></i>  EDIT</Link> <br />
-          <button id="delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
-        </>
+          <div className="post-actions">
+              <Link to={`/posts/${postId}/edit`} state={post}><i className="edit-btn"></i>  EDIT</Link> <br />
+              <button id="delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
+          </div>
         }
-      </div>
-      <div className="create-trip-btn">
         {post.author[0]._id !== props.user.profile && (
-          <button onClick={handleCreateTrip}>Confirm Ride Share</button> 
+          <div className="create-trip-section">
+            <button onClick={handleCreateTrip}>Confirm Ride Share</button>
+          </div> 
         )}
-        <section>
+        </section>
+      </div>
+      <br />
+      <div className="right-column">
+        <section className="message-section">
+          <form onSubmit={handleSubmit}>
+            <label htmlFor="text-input"><i className="ri-chat-smile-2-line"></i>  Send A Message:</label>
+            <textarea
+              required
+              type="text"
+              name="text"
+              id="text-input"
+              value={messageFormData.text}
+              onChange={handleChange}
+              />
+            <button>Send Message</button>
+          </form>
+        </section>
+      
+      <section className="reviews-section">
         <h1>Reviews</h1>
         <NewReview handleAddReview={handleAddReview} />
         <Reviews reviews={post.reviews} user={props.user}/>
-        </section>  
-      </div>
+      </section>  
+    </div>
   </main>
+  </>
   )
 }
 
