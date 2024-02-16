@@ -8,7 +8,7 @@
 What inspires us to build *Ride & Fly* is that as avid travelers, we are tired of the stress and expenses of getting to the aitport. So say good bye to the days of costly cab rides and cumbersome luggae struggles. *Ride & FLy* will address the failed promise from copmanies like Uber and Lyft, where there would be fewer cars on the road, namely fewer carbon emission and fewer car crashes. 
 
 * ### [Trello Board](https://trello.com/b/nWhXMytP/ride-and-fly)
-* ### [Ride & Fly]()
+* ### [Ride & Fly](https://ride-and-fly.netlify.app)
 * ### [Github Back-end Repo](https://github.com/TheBerlinMan/ride-and-fly-back-end)
 
 # 🤝 Contributors
