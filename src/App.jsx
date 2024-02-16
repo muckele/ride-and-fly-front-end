@@ -16,6 +16,7 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
 import TripList from './pages/TripList/TripList'
+import TripCard from './components/TripCard/TripCard'
 
 
 // components
@@ -123,6 +124,7 @@ function App() {
     }
     if (user) fetchAllTrips()
   },[user])
+
   
   return (
     <div className='app-container'>
@@ -205,7 +207,7 @@ function App() {
           path="/trips" 
           element={
             <ProtectedRoute user={user}>
-              <TripList handleCreateTrip={handleCreateTrip} trips={trips}/>
+              <TripList handleCreateTrip={handleCreateTrip} trips={trips} />
             </ProtectedRoute>
           } 
         />

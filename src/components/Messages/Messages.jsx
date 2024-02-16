@@ -8,8 +8,6 @@ const Messages = (props) => {
     return <div>Loading...</div>;
   }
   
-  // console.log(props.conversation);
-  // console.log(props.conversation.messages);
 
 
   return ( 
