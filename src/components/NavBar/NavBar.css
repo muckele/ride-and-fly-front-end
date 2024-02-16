@@ -16,12 +16,13 @@ li {
   list-style-type: none;
 }
 
-li > a {
+ul li > a {
   text-decoration: none;  
   color: white;
   font-size: 1.2rem;
   font-weight: 500;
   color: #f3f4f6;
+  position: relative;
 }
 li > a:visited {
   text-decoration: none;  
@@ -31,7 +32,23 @@ li > a:visited {
 }
 
 li > a:hover {
-  color: wheat;
+  color: rgb(138,222,255);
+  opacity: 1;
+}
+
+
+ul li > a:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: rgb(138,222,255);
+  transition: width .3s;
+}
+
+ul li > a:hover::after {
+  width: 100%;
+  transition: width .3s;
 }
 
 #logo{
