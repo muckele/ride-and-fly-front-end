@@ -1,4 +1,14 @@
 /* Corrected styling for the left column card */
+
+.post-content {
+  height:800px;
+  padding: 32px;
+}
+
+.message-section {
+  height: 400px;
+}
+
 .left-column {
   display: flex;
   /* Use flexbox for layout within the card */
@@ -48,3 +58,61 @@
   flex-direction: column;
   /* Ensure consistent vertical layout for smaller screens */
 }
+
+
+#detail-title {
+  font-size: 40px;
+}
+
+.box {
+  display: flex;
+  flex-wrap:wrap;
+  row-gap:10px;
+  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+  /* background-color: rgba(51, 51, 51, 0.9); */
+  column-gap: 2em;;
+}
+
+.main-content {
+  width: 800px;
+
+}
+
+.content-row{
+  /* background-color: rgba(51, 51, 51, 0.9);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+}
+
+.box >* {
+  flex:1;
+}
+
+.post-details-container {
+  height: 100%;
+  width: 1300px;
+  margin-left: 400px;
+  margin-top: -10px;
+}
+
+.post-content {
+  background-color: rgba(51, 51, 51, 0.9);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.review-pt, .message-pt {
+  margin-top: -80px;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center; 
+}
+
+.post-actions button,
+.post-actions a {
+  margin-right: 10px; 
+}
+
+
+
+

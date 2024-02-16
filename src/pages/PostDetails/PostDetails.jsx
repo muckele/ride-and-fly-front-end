@@ -71,27 +71,27 @@ const PostDetails = (props) => {
   return (
     <>
     <div className="post-header">
-        <h1>{post.author[0].name} looking for a carpal from {post.airport} to {post.dropOff}</h1>
-    </div>
-    <main className="post-details-container">
+        <h1 id="detail-title" >{post.author[0].name} looking for a carpal from {post.airport} to {post.dropOff}</h1>
+    </div
+    
+    >
+    <div className="post-details-container">
       
-      <div className="left-column">
+      <div className="box main-content">
         <section className="post-content">
           <div className="post-info">
-            <ul>
-              <li>{post.author[0].name}</li>
-              <li>{post.date}</li>
-              <li>{post.time}</li>
-              <li>{post.airport}</li>
-              <li>{post.terminal}</li>
-              <li>{post.dropOff}</li>
-              <li>{post.partySize}</li>
-            </ul>
+              <p>Carpal: {post.author[0].name}</p>
+              <p>Date: {post.date}</p>
+              <p>Time:{post.time}</p>
+              <p>Airport:{post.airport}</p>
+              <p>Terminal:{post.terminal}</p>
+              <p>Drop off:{post.dropOff}</p>
+              <p>Party size:{post.partySize}</p>
           </div>
         {post.author[0]._id === props.user.profile &&
           <div className="post-actions">
-              <Link to={`/posts/${postId}/edit`} state={post}><i className="edit-btn"></i>  EDIT</Link> <br />
-              <button id="delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
+              <Link to={`/posts/${postId}/edit`} state={post} ><i className="edit-btn"  ></i>  EDIT</Link> <br />
+              <button id="pd-delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
           </div>
         }
         {post.author[0]._id !== props.user.profile && (
@@ -101,10 +101,13 @@ const PostDetails = (props) => {
         )}
         </section>
       </div>
-      <br />
-      <div className="right-column">
-        <section className="message-section">
-          <form onSubmit={handleSubmit}>
+
+
+
+      <div className="box content-row">
+        <div className="message-pt">
+        <section >
+          <form  onSubmit={handleSubmit}>
             <label htmlFor="text-input"><i className="ri-chat-smile-2-line"></i>  Send A Message:</label>
             <textarea
               required
@@ -116,15 +119,17 @@ const PostDetails = (props) => {
               />
             <button>Send Message</button>
           </form>
-        </section>
+        </section></div>
       
-      <section className="reviews-section">
-        <h1>Reviews</h1>
+  
+      <div className="reviews-pt">
+      <section >
+        
         <NewReview handleAddReview={handleAddReview} />
         <Reviews reviews={post.reviews} user={props.user}/>
-      </section>  
-    </div>
-  </main>
+      </section>  </div></div>
+    
+  </div>
   </>
   )
 }
