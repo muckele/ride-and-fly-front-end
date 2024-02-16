@@ -21,5 +21,5 @@ const ConversationCard = ( { conversation , user} ) => {
 
   )
 }
- 
+
 export default ConversationCard;

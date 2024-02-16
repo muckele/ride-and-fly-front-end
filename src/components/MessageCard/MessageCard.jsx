@@ -7,7 +7,7 @@ const MessageCard = ({ message }) => {
     <div className='message-card'>
       {message.text}
     </div>
-   )
+  )
 }
- 
+
 export default MessageCard
