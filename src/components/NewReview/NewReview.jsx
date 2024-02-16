@@ -19,6 +19,7 @@ const NewReview = (props) => {
 
 return (
   <form onSubmit={handleSubmit}>
+    <label htmlFor="review">Review</label>
     <textarea
       required
       name="review"
