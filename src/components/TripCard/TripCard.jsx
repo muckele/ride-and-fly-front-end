@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 import './TripCard.css'
 
 const TripCard = ( {trip, handleCompleteTrip} ) => {
-  console.log(trip);
   
 
   return (
@@ -15,7 +14,7 @@ const TripCard = ( {trip, handleCompleteTrip} ) => {
       <Link to={`/trips/${trip._id}`}></Link>
       <div className='postcard-container'>
       <ul>
-        <li>User name: {trip.carPals[0].name}</li>
+        <li>Car Pal: {trip.carPals[0].name}</li>
         <li>Date/Time: {trip.post.date}</li>
         <li>Airport: {trip.post.airport}</li>
         <li>Terminal: {trip.post.terminal}</li>
@@ -25,7 +24,9 @@ const TripCard = ( {trip, handleCompleteTrip} ) => {
         <li>Oversized Luggage: {trip.post.oversizedLuggage ? 'Yes' : 'No'}</li>
         <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
         <li>Car Type: {trip.post.carType}</li>
-        <button onClick={() => handleCompleteTrip(trip._id)}>Mark as Completed</button>
+        {trip.isActive && (
+            <button onClick={() => handleCompleteTrip(trip._id)}>Mark as Completed</button>
+        )}
       </ul>
       </div>
       

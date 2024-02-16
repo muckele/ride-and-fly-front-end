@@ -21,11 +21,6 @@ const PostCard = ( {post} ) => {
         <li>Airport: {post.airport}</li>
         <li>Terminal: {post.terminal}</li>
         <li>Dropoff: {post.dropOff} </li>
-        <li>Party size: {post.partySize}</li>
-        <li>Luxury Car: {post.luxuryCar ? 'Yes' : 'No'}</li>
-        <li>Oversized Luggage: {post.oversizedLuggage ? 'Yes' : 'No'}</li>
-        <li>Traveling with a Pet: {post.travelingWithPet ? 'Yes' : 'No'}</li>
-        <li>Car Type: {post.carType}</li>
       </ul>
       </div>
       </Link>
