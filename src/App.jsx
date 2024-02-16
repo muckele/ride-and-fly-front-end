@@ -199,7 +199,7 @@ function App() {
           path="/inbox" 
           element={
             <ProtectedRoute user={user}>
-              <Inbox conversations={conversations} />
+              <Inbox conversations={conversations} user={user}/>
             </ProtectedRoute>
           } 
         />
