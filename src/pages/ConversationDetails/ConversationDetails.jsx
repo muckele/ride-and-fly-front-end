@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom"
 
 //services
 import * as convoService from '../../services/convoService'
-// import * as messageService from '../../services/messageService'
 
 //css
 import '../ConversationDetails/ConversationDetails.css'
