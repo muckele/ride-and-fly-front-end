@@ -7,7 +7,7 @@ import '../Inbox/Inbox.css'
 
 const Inbox = (props) => {
 
-  console.log(props.user.profile);
+  
   const userConversations = props.conversations.filter(conversation =>
     conversation.participants.includes(props.user.profile)
   );
@@ -16,7 +16,7 @@ const Inbox = (props) => {
     <div className='inbox-container'>
       <h1>Inbox</h1>
       {userConversations.map((conversation) => (
-        <ConversationCard key={conversation._id} conversation={conversation}/>
+        <ConversationCard key={conversation._id} conversation={conversation} user={props.user}/>
       ))}
       
     </div>
