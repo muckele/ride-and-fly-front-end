@@ -35,7 +35,7 @@
   display: flex;
   justify-content: space-between;
   padding: 20px;
-  gap: 20px;
+  gap: 80px;
   /* No need for flex-direction: row; as it's the default */
 }
 
@@ -70,7 +70,7 @@
   row-gap:10px;
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
   /* background-color: rgba(51, 51, 51, 0.9); */
-  column-gap: 2em;;
+  column-gap: -30em;
 }
 
 .main-content {
@@ -90,7 +90,7 @@
 .post-details-container {
   height: 100%;
   width: 1300px;
-  margin-left: 400px;
+  margin-left: 800px;
   margin-top: -10px;
 }
 
@@ -113,6 +113,13 @@
   margin-right: 10px; 
 }
 
+.pd-p{
+  font-size: larger;
+}
+
+#pd-delete-button{
+  margin-left: 200px;
+}
 
 
 

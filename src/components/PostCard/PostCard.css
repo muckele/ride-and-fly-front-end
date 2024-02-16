@@ -9,7 +9,7 @@ ul{
 .outer-postcard-container {
   margin-bottom: 0;
   height: 100px;
- margin-top: -20px;
+ /* margin-top: -20px; */
 }
 
 .postcard-container {

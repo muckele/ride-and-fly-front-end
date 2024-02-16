@@ -80,17 +80,20 @@ const PostDetails = (props) => {
       <div className="box main-content">
         <section className="post-content">
           <div className="post-info">
-              <p>Carpal: {post.author[0].name}</p>
-              <p>Date: {post.date}</p>
-              <p>Time:{post.time}</p>
-              <p>Airport:{post.airport}</p>
-              <p>Terminal:{post.terminal}</p>
-              <p>Drop off:{post.dropOff}</p>
-              <p>Party size:{post.partySize}</p>
+          {post.author[0]._id === props.user.profile &&
+            <Link to={`/posts/${postId}/edit`} state={post} ><i className="ri-pencil-line pd-p"></i>EDIT</Link> 
+          }
+              <p className="pd-p">Carpal: {post.author[0].name}</p>
+              <p className="pd-p">Date: {post.date}</p>
+              <p className="pd-p">Time:{post.time}</p>
+              <p className="pd-p">Airport:{post.airport}</p>
+              <p className="pd-p">Terminal:{post.terminal}</p>
+              <p className="pd-p">Drop off:{post.dropOff}</p>
+              <p className="pd-p">Party size:{post.partySize}</p>
           </div>
         {post.author[0]._id === props.user.profile &&
           <div className="post-actions">
-              <Link to={`/posts/${postId}/edit`} state={post} ><i className="edit-btn"  ></i>  EDIT</Link> <br />
+              
               <button id="pd-delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
           </div>
         }
