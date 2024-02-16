@@ -66,6 +66,7 @@ const PostDetails = (props) => {
     fetchPost()
   }, [postId])
 
+
   if (!post) return <h1>Loading, please wait!</h1>
 
   return (

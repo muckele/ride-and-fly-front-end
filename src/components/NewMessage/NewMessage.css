@@ -1,13 +1,6 @@
-div{
-  margin-top: 100px;
-}
-
-
-
-.new-message {
+.new-message-form {
   display: flex;
   justify-content: center;
-  width: 100%;
   align-items: center;
+  margin-left: 10px;
 }
-

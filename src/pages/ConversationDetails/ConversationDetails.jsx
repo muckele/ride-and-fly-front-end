@@ -27,14 +27,17 @@ const ConversationDetails = (props) => {
 
   if (!conversation) return <h1>Loading...</h1>
   return ( 
-    <div>
-      <h2>Conversation</h2>
-      <Messages conversation={conversation}/>
-      <NewMessage handleSendMessage={props.handleSendMessage} conversationId={conversationId}/>
+    <div className="conversation-page">
+      <h1>Conversation</h1>
+      <div className="conversation-feed">
+        <Messages conversation={conversation}/>
+      </div>
+      <div className="new-message">
+        <NewMessage handleSendMessage={props.handleSendMessage} conversationId={conversationId}/>
+      </div> 
       
-   
     </div> 
   )
 }
- 
+
 export default ConversationDetails

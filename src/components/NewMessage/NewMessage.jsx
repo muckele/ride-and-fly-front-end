@@ -13,14 +13,14 @@ const NewMessage = ({ handleSendMessage, conversationId }) => {
 
   const handleSubmit = evt => {
     evt.preventDefault()
-   
+
     handleSendMessage({...messageFormData, conversationId})
     setMessageFormData({text: ''})
   }
 
   return ( 
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="new-message-form">
       <textarea 
         name="text" 
         required
