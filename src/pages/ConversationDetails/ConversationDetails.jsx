@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom"
 
 //services
 import * as convoService from '../../services/convoService'
-// import * as messageService from '../../services/messageService'
 
 //css
 import '../ConversationDetails/ConversationDetails.css'
@@ -25,11 +24,6 @@ const ConversationDetails = (props) => {
     }
     fetchConvo()
   }, [conversationId])
-
-  // const handleNewMessage = async (messageFormData) => {
-  //   const newMessage = await messageService.createMessage(conversationId, messageFormData)
-  //   setConversation({...conversation, messages: [...conversation.messages, newMessage]})
-  // }
 
   if (!conversation) return <h1>Loading...</h1>
   return ( 
