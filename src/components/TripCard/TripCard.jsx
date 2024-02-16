@@ -11,19 +11,16 @@ const TripCard = ( {trip, handleCompleteTrip} ) => {
 
   return (
     <div className='outer-postcard-container'>
-      <Link to={`/trips/${trip._id}`}></Link>
+      
       <div className='postcard-container'>
       <ul>
         <li>Car Pal: {trip.carPals[0].name}</li>
-        <li>Date/Time: {trip.post.date}</li>
+        <li>Date: {trip.post.date}</li>
+        <li>Time: {trip.post.time}</li>
         <li>Airport: {trip.post.airport}</li>
         <li>Terminal: {trip.post.terminal}</li>
         <li>Dropoff: {trip.post.dropOff} </li>
-        <li>Party size: {trip.post.partySize}</li>
-        <li>Luxury Car: {trip.post.luxuryCar ? 'Yes' : 'No'}</li>
-        <li>Oversized Luggage: {trip.post.oversizedLuggage ? 'Yes' : 'No'}</li>
-        <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
-        <li>Car Type: {trip.post.carType}</li>
+        <Link to={`/trips/${trip._id}`}>Trip Details</Link>
         {trip.isActive && (
             <button onClick={() => handleCompleteTrip(trip._id)}>Mark as Completed</button>
         )}

@@ -16,8 +16,9 @@ const PostCard = ( {post} ) => {
         <Link to={`/posts/${post._id}`}>
       <div className='postcard-container'>
       <ul>
-        <li>User name: {post.author[0].name}</li>
+        <li>Car Pal: {post.author[0].name}</li>
         <li>Date/Time: {post.date}</li>
+        <li>Time: {post.time}</li>
         <li>Airport: {post.airport}</li>
         <li>Terminal: {post.terminal}</li>
         <li>Dropoff: {post.dropOff} </li>

@@ -53,8 +53,3 @@ const TripList = (props) => {
 export default TripList
 
 
-            // <h1>Active Trips</h1>
-            // {props.trips.map((trip) => (
-            //   <TripCard key={trip._id} trip={trip}  />
-            // ))}
-            // {/* <button onClick={handleCompleteTrip}>Click Here</button> */}
