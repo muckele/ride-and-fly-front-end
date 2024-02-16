@@ -10,7 +10,8 @@ import '../NavBar/NavBar.css'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className='nav-container'>
-      <NavLink to="/"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink>
+      <NavLink to="/"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink><br/>
+      <p id ="hello-nav" >Hello, {user ? user.name : 'friend'}</p>
       {user ?
         <ul>
           <li><NavLink to={`/profiles/${user.profile}`}><i className="ri-user-line"></i> Profile</NavLink></li>

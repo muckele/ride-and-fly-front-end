@@ -4,7 +4,7 @@ import './Landing.css'
 const Landing = ({ user }) => {
   return (
     <main className='container'>
-      <h1>Hello, {user ? user.name : 'friend'}</h1>
+      {/* <h1>Hello, {user ? user.name : 'friend'}</h1> */}
       <div className='container-left'>
         <div className='content'>
           <h1>Ready To<br/>Ditch Uber?</h1>

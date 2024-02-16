@@ -14,21 +14,7 @@ async function index() {
   }
 }
 
-async function createReview(tripId, reviewFormData) {
-  try {
-    const res = await fetch(`${BASE_URL}/${tripId}/reviews`,{
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${tokenService.getToken()}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reviewFormData)
-    })
-    return res.json()
-  } catch (error) {
-    console.log(error)
-  }
-}
+
 
 async function createTrip(tripFormData) {
   try {
@@ -73,7 +59,6 @@ async function updateTripStatus(tripId){
 
 
 export {
-  createReview,
   index,
   createTrip,
   showTrip, 
