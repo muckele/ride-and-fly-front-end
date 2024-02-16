@@ -26,11 +26,6 @@ const ConversationDetails = (props) => {
     fetchConvo()
   }, [conversationId])
 
-  // const handleNewMessage = async (messageFormData) => {
-  //   const newMessage = await messageService.createMessage(conversationId, messageFormData)
-  //   setConversation({...conversation, messages: [...conversation.messages, newMessage]})
-  // }
-
   if (!conversation) return <h1>Loading...</h1>
   return ( 
     <div>
