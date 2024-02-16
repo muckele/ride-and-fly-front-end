@@ -126,11 +126,6 @@ function App() {
     if (user) fetchAllTrips()
   },[user])
 
-  // const handleCompleteTrip = async (tripFormData) => {
-  //   const updatedTrip = await tripService.update(tripFormData)
-  //   setTrips(trips.map((trip) => updatedTrip._id === trip._id ? updatedTrip : trip))
-  //   navigate('/')
-  // }
   
   return (
     <div className='app-container'>
