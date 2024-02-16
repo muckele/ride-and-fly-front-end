@@ -18,6 +18,20 @@
   margin-top: -10px;
 }
 
+.profile-box{
+  text-align: center;
+  background-color: #333333;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon {
+  width: 20%;
+  height: auto;
+}
+
 #profile-title {
   font-size: 90px;
 }
+

@@ -1,12 +1,15 @@
 ul{
   margin: 0;
-  width: 2200px;
+  width: 1800px;
+  display: flex;
+  justify-content: space-between;
 }
 
 
 .outer-postcard-container {
   margin-bottom: 0;
-  height: 22px;
+  height: 100px;
+ margin-top: -20px;
 }
 
 .postcard-container {

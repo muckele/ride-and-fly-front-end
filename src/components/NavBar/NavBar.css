@@ -8,7 +8,7 @@ ul{
 }
 
 li {
- /* display: flex; */
+ display: flex;
   margin: 20px;
   padding: 0 20px;
   text-decoration: none;

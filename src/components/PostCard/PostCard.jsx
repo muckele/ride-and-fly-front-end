@@ -9,10 +9,6 @@ const PostCard = ( {post} ) => {
 
   return (
     <div className='outer-postcard-container'>
-      
-        {/* <span>
-          <h1>{post.createdAt}</h1>
-        </span> */}
         <Link to={`/posts/${post._id}`}>
       <div className='postcard-container'>
       <ul>
