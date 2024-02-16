@@ -57,9 +57,3 @@ What inspires us to build *Ride & Fly* is that as avid travelers, we are tired o
 - [ ] Add Search Box
 - [ ] Add MUI
 - [ ] Confetti
-
-
-
-
-// test 
-
