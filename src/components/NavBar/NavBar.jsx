@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
       <NavLink to="/"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink>
       {user ?
         <ul>
-          <li><NavLink to={`/profiles/${user.profile}`}><i className="ri-user-line"></i> Profiles</NavLink></li>
+          <li><NavLink to={`/profiles/${user.profile}`}><i className="ri-user-line"></i> Profile</NavLink></li>
           {/* <li><NavLink to="/profiles/:profileId">Profiles</NavLink></li> */}
           <li><NavLink to="/posts"><i className="ri-profile-line"></i> Posts</NavLink></li>
           <li><NavLink to="/posts/new"><i className="ri-pencil-line"></i> New Post</NavLink></li>

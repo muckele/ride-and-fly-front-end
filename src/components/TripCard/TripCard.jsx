@@ -1,18 +1,18 @@
 // npm modules
 import { Link } from 'react-router-dom'
 
-//services
-import * as tripService from '../../services/tripService'
+
 
 // css 
 import './TripCard.css'
 
-const TripCard = ( {trip, onComplete} ) => {
-  console.log("This is trip in TripCard: ", trip)
+const TripCard = ( {trip, handleCompleteTrip} ) => {
+  console.log(trip);
+  
 
   return (
     <div className='outer-postcard-container'>
-        <Link to={`/trips/${trip._id}`}>
+      <Link to={`/trips/${trip._id}`}></Link>
       <div className='postcard-container'>
       <ul>
         <li>User name: {trip.carPals[0].name}</li>
@@ -25,10 +25,10 @@ const TripCard = ( {trip, onComplete} ) => {
         <li>Oversized Luggage: {trip.post.oversizedLuggage ? 'Yes' : 'No'}</li>
         <li>Traveling with a Pet: {trip.post.travelingWithPet ? 'Yes' : 'No'}</li>
         <li>Car Type: {trip.post.carType}</li>
+        <button onClick={() => handleCompleteTrip(trip._id)}>Mark as Completed</button>
       </ul>
-        <button onClick={() => onComplete(trip._id)}>Mark as Completed</button>
       </div>
-      </Link>
+      
     </div>
   )
 }

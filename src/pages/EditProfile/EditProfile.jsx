@@ -11,7 +11,6 @@ const EditProfile = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    console.log(formData);
     props.handleUpdateProfile(formData)
   }
   

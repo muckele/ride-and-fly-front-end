@@ -9,7 +9,6 @@ const EditPost = (props) => {
   const { state } = useLocation()
   const [formData, setFormData] = useState(state)
 
-  console.log(state)
 
   
   const handleSubmit = (evt) => {

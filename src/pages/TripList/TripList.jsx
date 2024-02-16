@@ -11,7 +11,6 @@ import * as tripService from '../../services/tripService'
 import './TripList.css'
 
 
-
 const TripList = (props) => {
   const [activeTrips, setActiveTrips] = useState([])
   const [completedTrips, setCompletedTrips] = useState([])
@@ -24,22 +23,19 @@ const TripList = (props) => {
   }, [props.trips])
 
   const handleCompleteTrip = async (tripId) => {
-    await tripService.updateTripStatus(tripId, { isActive: false })
+    await tripService.updateTripStatus(tripId)
     setActiveTrips(activeTrips.filter(trip => trip._id !== tripId))
     const completedTrip = activeTrips.find(trip => trip._id === tripId)
     setCompletedTrips([...completedTrips, { ...completedTrip, isActive: false }])
   } 
 
-
-
-  console.log(props.trips)
   return (
     <>
       <main>
-        <h2>Active Trips</h2>
+      <h2>Active Trips</h2>
         <div className="active-trips">
           {activeTrips.map(trip => (
-            <TripCard key={trip._id} trip={trip} onComplete={() => handleCompleteTrip(trip._id)} />
+            <TripCard key={trip._id} trip={trip} handleCompleteTrip={handleCompleteTrip}/>
           ))}
         </div>
         <h2>Completed Trips</h2>

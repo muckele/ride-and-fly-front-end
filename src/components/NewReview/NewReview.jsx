@@ -11,13 +11,11 @@ const NewReview = (props) => {
   const [formData, setFormData] = useState({ text: '' })
   // mui rating   
   // const [value, setValue] = React.useState(0);
-  // console.log(value)
 
 
   const handleChange = (evt) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
-    console.log(formData)
 
   const handleSubmit = (e) => {
     e.preventDefault()

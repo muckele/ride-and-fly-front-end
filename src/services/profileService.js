@@ -48,7 +48,6 @@ async function addPhoto(photoData) {
 
 async function updateProfile(profileFormData){
   try {
-    console.log(profileFormData);
     const res = await fetch(`${BASE_URL}/${profileFormData._id}`, {
       method: 'PUT',
       headers: {
