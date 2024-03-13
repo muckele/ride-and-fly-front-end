@@ -9,7 +9,7 @@ const Landing = ({ user }) => {
         <div className='content'>
           <h1 id="hover-h1">Share a ride<br/>Make new friends!</h1>
           <div id="slogan-landing">
-          <p>Ride & FLy is your hassel-free solution to carpooling your way to airport. This is the app where you can share your journey and fun with fellow car pals as well as the expenses while being ecofriendly.</p></div>
+          <p>Ride & Fly is your hassle-free solution to carpooling your way to airport. This is the app where you can share your journey and fun with fellow car pals as well as the expenses while being ecofriendly.</p></div>
         </div>
       </div>
     </main>
