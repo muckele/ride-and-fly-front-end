@@ -7,6 +7,12 @@ import { Link } from 'react-router-dom'
 import './TripCard.css'
 
 const TripCard = ( {trip, handleCompleteTrip} ) => {
+
+  const formattedDate = new Date(trip.post.date).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  })
   
 
   return (
@@ -15,7 +21,7 @@ const TripCard = ( {trip, handleCompleteTrip} ) => {
       <div className='postcard-container'>
       <ul>
         <li>Car Pal: {trip.carPals[0].name}</li>
-        <li>Date: {trip.post.date}</li>
+        <li>Date: {formattedDate}</li>
         <li>Time: {trip.post.time}</li>
         <li>Airport: {trip.post.airport}</li>
         <li>Terminal: {trip.post.terminal}</li>
