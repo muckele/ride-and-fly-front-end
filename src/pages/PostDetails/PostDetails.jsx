@@ -58,13 +58,17 @@ const PostDetails = (props) => {
   }
 }
 
-  useEffect(() => {
-    const fetchPost = async () => {
-      const data = await postService.show(postId)
-      setPost(data)
+useEffect(() => {
+  const fetchPost = async () => {
+    const data = await postService.show(postId)
+    if (data.date) {
+      const formattedDate = new Date(data.date).toLocaleDateString()
+      data.date = formattedDate
     }
-    fetchPost()
-  }, [postId])
+    setPost(data)
+  }
+  fetchPost()
+}, [postId])
 
 
   if (!post) return <h1>Loading, please wait!</h1>
