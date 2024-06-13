@@ -35,6 +35,7 @@ const PostDetails = (props) => {
     }
     props.handleSendMessage(messageData)
     setMessageFormData({text: ''})
+    navigate('/inbox')
   }
   const handleAddReview = async (reviewFormData) => {
     const newReview = await postService.createReview(postId, reviewFormData)
