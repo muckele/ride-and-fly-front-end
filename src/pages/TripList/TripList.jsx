@@ -32,7 +32,7 @@ const TripList = (props) => {
   return (
     <>
       <main>
-      <h2>Active Trips</h2>
+      <h1><i className="ri-roadster-fill"></i> Active Trips <i className="ri-roadster-fill"></i></h1>
         <div className="active-trips">
           {activeTrips.map(trip => (
             <TripCard key={trip._id} trip={trip} handleCompleteTrip={handleCompleteTrip}/>

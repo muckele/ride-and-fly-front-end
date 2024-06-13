@@ -3,6 +3,7 @@ import ConversationCard from '../../components/ConversationCard/ConversationCard
 //css
 import '../Inbox/Inbox.css'
 
+
 const Inbox = (props) => {
   const userConversations = props.conversations.filter(conversation =>
     conversation.participants.includes(props.user.profile)
@@ -14,7 +15,7 @@ const Inbox = (props) => {
 
   return (
     <div className='inbox-container'>
-      <h1>Inbox</h1>
+      <h1> Inbox <i class="ri-mail-fill"></i></h1>
       {userConversations.map((conversation) => {
         const mostRecentMessage = getMostRecentMessage(conversation.messages);
         return (

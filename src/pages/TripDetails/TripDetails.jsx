@@ -28,7 +28,7 @@ const TripDetails = ({ trips }) => {
 
   return (
     <>
-      <h2 className="trip-details-title">Trip Details</h2>
+      <h1 className="trip-details-title" ><i className="ri-roadster-fill"></i> Trip Details <i className="ri-roadster-fill"></i></h1>
       <div className="outer-postcard-container">
         <div className="postcard-container">
           <ul className="trip-details-content">
