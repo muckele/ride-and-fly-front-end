@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import * as tripService from '../../services/tripService';
-import './TripDetails.css';
+import './TripDetails.css'
+
+
 
 const TripDetails = ({ trips }) => {
   const { tripId } = useParams();
@@ -25,17 +27,21 @@ const TripDetails = ({ trips }) => {
   });
 
   return (
-    <div className='trip-details'>
-      <h2>Trip Details</h2>
-      <ul>
-        <li>Car Pal: {trip.carPals[0].name}</li>
-        <li>Date: {formattedDate}</li>
-        <li>Time: {trip.post.time}</li>
-        <li>Airport: {trip.post.airport}</li>
-        <li>Terminal: {trip.post.terminal}</li>
-        <li>Dropoff: {trip.post.dropOff}</li>
-      </ul>
-    </div>
+    <>
+      <h2 className="trip-details-title">Trip Details</h2>
+      <div className="outer-postcard-container">
+        <div className="postcard-container">
+          <ul className="trip-details-content">
+            <li className="trip-detail-item"><strong>Car Pal:</strong> {trip.carPals[0].name}</li>
+            <li className="trip-detail-item"><strong>Date:</strong> {formattedDate}</li>
+            <li className="trip-detail-item"><strong>Time:</strong> {trip.post.time}</li>
+            <li className="trip-detail-item"><strong>Airport:</strong> {trip.post.airport}</li>
+            <li className="trip-detail-item"><strong>Terminal:</strong> {trip.post.terminal}</li>
+            <li className="trip-detail-item"><strong>Dropoff:</strong> {trip.post.dropOff}</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
 };
 

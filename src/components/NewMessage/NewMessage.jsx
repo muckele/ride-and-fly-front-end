@@ -33,5 +33,5 @@ const NewMessage = ({ handleSendMessage, conversationId }) => {
     </div>
   )
 }
- 
+
 export default NewMessage
