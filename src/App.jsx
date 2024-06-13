@@ -16,6 +16,7 @@ import EditProfile from './pages/EditProfile/EditProfile'
 import Inbox from './pages/Inbox/Inbox'
 import ConversationDetails from './pages/ConversationDetails/ConversationDetails'
 import TripList from './pages/TripList/TripList'
+import TripDetails from './pages/TripDetails/TripDetails'
 
 
 
@@ -215,6 +216,7 @@ function App() {
           path="/trips/:tripId"
           element={
             <ProtectedRoute user={user}>
+              <TripDetails user={user} trips={trips} />
             </ProtectedRoute>
           } 
         />
