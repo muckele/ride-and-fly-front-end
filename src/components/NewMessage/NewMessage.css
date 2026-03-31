@@ -1,6 +1,49 @@
+.new-message-box {
+  width: 100%;
+}
+
 .new-message-form {
   display: flex;
+  align-items: flex-end;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.new-message-form textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 0.95rem 1rem;
+  resize: vertical;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font: inherit;
+}
+
+.new-message-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.new-message-form button {
+  flex: 0 0 auto;
+  align-self: stretch;
   justify-content: center;
-  align-items: center;
-  margin-left: 10px;
+  min-width: 144px;
+  border-radius: 18px;
+}
+
+@media (max-width: 640px) {
+  .new-message-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .new-message-form textarea {
+    min-height: 96px;
+  }
+
+  .new-message-form button {
+    min-width: 0;
+  }
 }

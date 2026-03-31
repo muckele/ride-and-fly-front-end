@@ -1,23 +1,30 @@
-p.footer-p{
-  margin-top: -40px;
-  padding: -10px;
+.footer-p {
+  margin: 0;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
 }
 
-
 .footer-container {
-  background-color: rgba(51, 51, 51,0.8);
-  color: rgba(255,255,255,0.85);
-  height: 50px;
-  display:flex;
-  flex-direction: column;
+  margin-top: auto;
+  background-color: rgba(12, 18, 31, 0.78);
+  color: rgba(255, 255, 255, 0.85);
+  display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 15px;
-  padding: 25px;  
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100px;
+  font-size: 0.95rem;
+  padding: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-container a,
+.footer-container a:visited {
+  color: #8ed0ff;
+}
+
+@media (max-width: 640px) {
+  .footer-container {
+    padding: 1rem 0.85rem;
+    font-size: 0.82rem;
+  }
 }

@@ -1,30 +1,58 @@
-
-
-div > .message-card{
-  margin: 20px;
-  
-}
-
-div>.conversation {
-  margin: 60px;
-
-}
-
-p {
-  color: white;
-  /* margin: 20px; */
-  /* padding: 20px; */
-}
-
 .message-card {
-  margin: 20px;
-  padding: 20px;
+  width: min(100%, 38rem);
+  padding: 0.9rem 1rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(51, 51, 51, 0.8);
-  backdrop-filter: blur(5px);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-bottom: 2px solid #333333
+  flex-direction: column;
+  gap: 0.4rem;
+  border-radius: 20px;
+  background-color: rgba(26, 34, 49, 0.9);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.25);
+  text-align: left;
+}
+
+.message-card--incoming {
+  margin-right: auto;
+  border-top-left-radius: 8px;
+}
+
+.message-card--outgoing {
+  margin-left: auto;
+  background: linear-gradient(135deg, rgba(66, 153, 225, 0.9), rgba(59, 130, 246, 0.8));
+  border-top-right-radius: 8px;
+}
+
+.message-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.message-card__author {
+  font-weight: 700;
+}
+
+.message-card__time {
+  white-space: nowrap;
+}
+
+.message-card__text {
+  margin: 0;
+  color: #fff;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 640px) {
+  .message-card {
+    width: min(100%, 100%);
+    padding: 0.85rem 0.9rem;
+  }
+
+  .message-card__meta {
+    flex-direction: column;
+    gap: 0.2rem;
+  }
 }

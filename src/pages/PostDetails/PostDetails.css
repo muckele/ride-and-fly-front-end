@@ -1,8 +1,8 @@
-/* Corrected styling for the left column card */
-
 .post-content {
-  height:800px;
-  padding: 32px;
+  padding: 1.75rem;
+  border-radius: 24px;
+  background-color: rgba(51, 51, 51, 0.9);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .message-section {
@@ -11,115 +11,130 @@
 
 .left-column {
   display: flex;
-  /* Use flexbox for layout within the card */
   flex-direction: column;
-  /* Stack items vertically */
   width: 48%;
-  /* Adjust width as needed */
   margin-right: 2%;
-  /* Add spacing between columns */
 }
 
-.left-column>section {
-  /* Apply card styles to the direct child sections */
+.left-column > section {
   background-color: #fff;
-  /* Or your desired card background color */
   border-radius: 5px;
   padding: 1rem;
-  /* Adjust padding as needed */
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-/* Other adjustments for clarity */
 .post-details-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
-  gap: 80px;
-  /* No need for flex-direction: row; as it's the default */
+  width: min(100%, 1120px);
+  display: grid;
+  grid-template-columns: minmax(280px, 380px) minmax(0, 1fr);
+  align-items: start;
+  padding: 0 1rem 2rem;
+  gap: 1.5rem;
 }
 
 .post-header {
-  border-sizing: border-box;
-  /* Should be box-sizing */
-  margin-top: -25px;
-  width: 100vw;
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: 1rem 1rem 0;
+  text-align: left;
 }
 
-/* Simplified column styles */
 .left-column,
 .right-column {
   flex: 1;
-  /* Ensure both columns take equal space */
 }
 
 .right-column {
   display: flex;
   flex-direction: column;
-  /* Ensure consistent vertical layout for smaller screens */
 }
 
-
 #detail-title {
-  font-size: 40px;
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0;
 }
 
 .box {
   display: flex;
-  flex-wrap:wrap;
-  row-gap:10px;
-  /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-  /* background-color: rgba(51, 51, 51, 0.9); */
-  column-gap: -30em;
+  flex-wrap: wrap;
+  row-gap: 1rem;
 }
 
 .main-content {
-  width: 800px;
-
+  width: auto;
 }
 
-.content-row{
-  /* background-color: rgba(51, 51, 51, 0.9);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+.content-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
 }
 
-.box >* {
-  flex:1;
+.box > * {
+  flex: 1;
 }
 
-.post-details-container {
-  height: 100%;
-  width: 1300px;
-  margin-left: 800px;
-  margin-top: -10px;
-}
-
-.post-content {
-  background-color: rgba(51, 51, 51, 0.9);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-}
-
-.review-pt, .message-pt {
-  margin-top: -80px;
+.review-pt,
+.message-pt {
+  margin-top: 0;
+  padding: 1.4rem;
+  border-radius: 24px;
+  background-color: rgba(12, 18, 31, 0.78);
+  box-shadow: rgba(149, 157, 165, 0.12) 0px 8px 24px;
+  text-align: left;
 }
 
 .post-actions {
   display: flex;
-  align-items: center; 
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .post-actions button,
 .post-actions a {
-  margin-right: 10px; 
+  margin-right: 0;
 }
 
-.pd-p{
+.pd-p {
   font-size: larger;
+  text-align: left;
 }
 
-#pd-delete-button{
-  margin-left: 200px;
+#pd-delete-button {
+  margin-left: 0;
 }
 
+.create-trip-section {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
 
+.message-pt form,
+.reviews-pt section {
+  width: 100%;
+}
 
+@media (max-width: 900px) {
+  .post-details-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .post-header,
+  .post-details-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .post-content,
+  .review-pt,
+  .message-pt {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+}

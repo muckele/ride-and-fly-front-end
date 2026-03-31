@@ -37,8 +37,12 @@ const Profiles = () => {
       <p>Bio: <br/>{userProfile.bio}</p><br/>
       <p>Funfacts: <br/>{userProfile.funFacts}</p><br/>
       <p>Post History: </p>
-      {userProfile.posts.map(post=> 
-        <p key={userProfile._id}>{post}</p>
+      {userProfile.posts.map((post) =>
+        <p key={post._id}>
+          <Link to={`/posts/${post._id}`}>
+            {post.airport} to {post.dropOff}
+          </Link>
+        </p>
       )}
       <Link to={`/profiles/${profileId}/edit`} state={userProfile}><i className="ri-pencil-line"></i>  EDIT</Link>
       </div>

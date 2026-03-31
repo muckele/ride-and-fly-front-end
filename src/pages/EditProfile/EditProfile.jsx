@@ -1,13 +1,31 @@
 // npm modules
-import { useState } from 'react'
-import { useLocation } from "react-router-dom"
+import { useEffect, useState } from 'react'
+import { useLocation, useParams } from "react-router-dom"
+
+// services
+import * as profileService from '../../services/profileService'
 
 // css
 import './EditProfile.css'
 
 const EditProfile = (props) => {
   const { state } = useLocation()
-  const [formData, setFormData] = useState(state)
+  const { profileId } = useParams()
+  const [formData, setFormData] = useState(state ?? null)
+
+  useEffect(() => {
+    const fetchProfile = async () => {
+      if (state) {
+        setFormData(state)
+        return
+      }
+
+      const profile = await profileService.getProfile(profileId)
+      setFormData(profile)
+    }
+
+    fetchProfile()
+  }, [profileId, state])
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
@@ -18,6 +36,7 @@ const EditProfile = (props) => {
     setFormData({ ...formData, [evt.target.name]: evt.target.value })
   }
 
+  if (!formData) return <main className='editprofile-container'><h1>Loading...</h1></main>
 
   return (
     <main className='editprofile-container'>
@@ -30,17 +49,6 @@ const EditProfile = (props) => {
           name="name" 
           id="name-input"
           onChange={handleChange} />
-        </div>
-
-        <div className="form-row">
-          <label htmlFor="email-input">Email</label>
-          <input
-          type="text"
-          value={formData.email}
-          name="email"
-          id="email-input"
-          onChange={handleChange}
-          />
         </div>
 
         <div className="form-row">

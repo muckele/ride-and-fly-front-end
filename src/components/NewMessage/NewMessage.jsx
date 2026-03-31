@@ -1,6 +1,7 @@
 
 //npm modules
 import { useState } from "react"
+import './NewMessage.css'
 
 
 const NewMessage = ({ handleSendMessage, conversationId }) => {
@@ -11,25 +12,25 @@ const NewMessage = ({ handleSendMessage, conversationId }) => {
     setMessageFormData({...messageFormData, [evt.target.name]: evt.target.value})
   }
 
-  const handleSubmit = evt => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault()
 
-    handleSendMessage({...messageFormData, conversationId})
+    await handleSendMessage({...messageFormData, conversationId})
     setMessageFormData({text: ''})
   }
 
   return ( 
-    <div>
+    <div className="new-message-box">
       <form onSubmit={handleSubmit} className="new-message-form">
-      <textarea 
-        name="text" 
-        required
-        placeholder="new message..."
-        value={messageFormData.text}
-        onChange={handleChange}
-      />
-      <button type="submit">Send Message</button>
-    </form>
+        <textarea
+          name="text"
+          required
+          placeholder="Write your message..."
+          value={messageFormData.text}
+          onChange={handleChange}
+        />
+        <button type="submit">Send Message</button>
+      </form>
     </div>
   )
 }

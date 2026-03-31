@@ -6,25 +6,25 @@ import './TripDetails.css'
 
 
 const TripDetails = ({ trips }) => {
-  const { tripId } = useParams();
-  const [trip, setTrip] = useState(null);
+  const { tripId } = useParams()
+  const [trip, setTrip] = useState(null)
 
   useEffect(() => {
-    const selectedTrip = trips.find(t => t._id === tripId);
+    const selectedTrip = trips.find((currentTrip) => currentTrip._id === tripId)
     if (selectedTrip) {
-      setTrip(selectedTrip);
+      setTrip(selectedTrip)
     } else {
-      tripService.getTrip(tripId).then(response => setTrip(response));
+      tripService.showTrip(tripId).then((response) => setTrip(response))
     }
-  }, [tripId, trips]);
+  }, [tripId, trips])
 
-  if (!trip) return <div>Loading...</div>;
+  if (!trip) return <div>Loading...</div>
 
   const formattedDate = new Date(trip.post.date).toLocaleDateString('en-us', {
     year: 'numeric',
     month: 'long',
     day: 'numeric'
-  });
+  })
 
   return (
     <>
@@ -42,7 +42,7 @@ const TripDetails = ({ trips }) => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default TripDetails;
+export default TripDetails

@@ -1,9 +1,9 @@
 // css
 import './Landing.css'
 
-const Landing = ({ user }) => {
+const Landing = () => {
   return (
-    <main className='container'>
+    <main className='landing-page'>
       {/* <h1>Hello, {user ? user.name : 'friend'}</h1> */}
       <div className='container-left'>
         <div className='content'>

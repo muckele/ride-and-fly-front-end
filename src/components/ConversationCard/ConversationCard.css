@@ -1,25 +1,54 @@
-
-div > .conversation{
-  margin: 60px;
-  
+.conversation-card {
+  border-radius: 22px;
+  background: rgba(12, 18, 31, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 34px rgba(15, 23, 42, 0.2);
+  transition: transform 0.18s ease, border-color 0.18s ease, background-color 0.18s ease;
 }
 
- p {
-  color: white;
-  /* margin: 20px; */
-  /* padding: 20px; */
+.conversation-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(142, 208, 255, 0.4);
+  background: rgba(16, 24, 39, 0.88);
 }
 
-.conversation-card{
-  margin: 20px;
-  padding: 20px;
+.conversation-card__link {
+  display: block;
+  padding: 1.15rem 1.25rem;
+  color: inherit;
+}
+
+.conversation-card__topline {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(51, 51, 51,0.8);
-  backdrop-filter: blur(5px);
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-bottom: 2px solid #333333
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
 }
 
+.conversation-card__participants {
+  font-weight: 700;
+  color: #fff;
+}
+
+.conversation-card__date {
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.66);
+  white-space: nowrap;
+}
+
+.conversation-card__preview {
+  margin: 0.7rem 0 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.45;
+}
+
+@media (max-width: 640px) {
+  .conversation-card__link {
+    padding: 1rem;
+  }
+
+  .conversation-card__topline {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}

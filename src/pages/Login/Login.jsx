@@ -44,7 +44,7 @@ const LoginPage = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main >
+    <main className="login-page">
       <h1>Log In</h1>
       <p >{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} >

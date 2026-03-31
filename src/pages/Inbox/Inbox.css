@@ -1,0 +1,58 @@
+.inbox-container {
+  width: min(100%, 980px);
+  margin: 0 auto;
+  padding: 2rem 1rem 3rem;
+}
+
+.inbox-header {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.inbox-eyebrow {
+  margin: 0 0 0.4rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #8ed0ff;
+}
+
+.inbox-header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.inbox-subtitle {
+  margin: 0.75rem 0 0;
+  max-width: 44rem;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.inbox-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.inbox-empty {
+  padding: 2rem 1.5rem;
+  border-radius: 24px;
+  background: rgba(12, 18, 31, 0.72);
+  border: 1px dashed rgba(142, 208, 255, 0.45);
+  text-align: center;
+}
+
+.inbox-empty p {
+  margin: 0;
+}
+
+.inbox-empty p + p {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 640px) {
+  .inbox-container {
+    padding: 1rem 0.75rem 2rem;
+  }
+}

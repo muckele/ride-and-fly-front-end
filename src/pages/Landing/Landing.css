@@ -1,4 +1,4 @@
-main {
+.landing-page {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,75 +10,84 @@ main {
   position: relative;
 }
 
-h1{
+.landing-page h1 {
   color: white;
-  margin-top: -40px;
-  font-size: 4rem;
 }
 
-.container-left{
-  flex:1;
+.container-left {
+  flex: 1;
   display: flex;
   justify-content: flex-start;
 }
 
-.content h1{
+.content h1 {
+  margin-top: -40px;
   font-size: 4rem;
   line-height: 4rem;
-  color:  white;
+  color: white;
   font-weight: 700;
-  
 }
 
-.content p{
-  color:  white;
-  border-bottom: 1px solid white
+.content p {
+  color: white;
+  border-bottom: 1px solid white;
 }
 
 #slogan-landing {
-  width: 700px;
+  width: min(100%, 700px);
   margin-top: -10px;
 }
 
-#hover-h1{
-  cursor:pointer;
-  position:relative;
-  padding:10px 20px;
-  background:transparent;
-  font-size:4rem;
-  border-top-right-radius:10px;
-  border-bottom-left-radius:10px;
-  transition:all 1s;
-  &:after,&:before{
-    content:" ";
-    width:10px;
-    height:10px;
-    position:absolute;
-    border :0px solid #fff;
-    transition:all 1s;
-    }
-  &:after{
-    top:-1px;
-    left:-1px;
-    border-top:5px solid rgb(255, 255, 255);
-    border-left:5px solid rgb(255, 255, 255);
+#hover-h1 {
+  cursor: pointer;
+  position: relative;
+  padding: 10px 20px;
+  background: transparent;
+  font-size: 4rem;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  transition: all 1s;
+  &:after,
+  &:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0 solid #fff;
+    transition: all 1s;
   }
-  &:before{
-    bottom:-1px;
-    right:-1px;
-    border-bottom:5px solid rgb(255, 255, 255);
-    border-right:5px solid rgb(255,255,255);
+  &:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid rgb(255, 255, 255);
+    border-left: 5px solid rgb(255, 255, 255);
   }
-  &:hover{
-    border-top-right-radius:0px;
-  border-bottom-left-radius:0px;
-    // background:rgba(0,0,0,.5);
-    // color:white;
-    &:before,&:after{
-      
-      width:100%;
-      height:100%;
-      // border-color:white;
+  &:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid rgb(255, 255, 255);
+    border-right: 5px solid rgb(255, 255, 255);
+  }
+  &:hover {
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    &:before,
+    &:after {
+      width: 100%;
+      height: 100%;
     }
+  }
+}
+
+@media (max-width: 700px) {
+  .landing-page {
+    min-height: auto;
+    padding-top: 2rem;
+  }
+
+  .content h1,
+  #hover-h1 {
+    font-size: 2.6rem;
+    line-height: 1.05;
   }
 }

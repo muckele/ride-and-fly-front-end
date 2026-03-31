@@ -39,20 +39,9 @@ import './App.css'
 function App() {
   const [user, setUser] = useState(authService.getUser())
   const [posts, setPosts] = useState([])
-  const [profiles, setProfiles] = useState([])
-  const [messages, setMessages] = useState([])
   const [conversations, setConversations] = useState([])
   const [trips, setTrips] = useState([])
   const navigate = useNavigate()
-
-  
-  useEffect (() => {
-    const fetchMessages = async () => {
-      const data = await messageService.indexInbox()
-      setMessages(data)
-    }
-    if (user) fetchMessages()
-  }, [user])
 
   useEffect (() => {
     const fetchConvos = async () => {
@@ -83,39 +72,41 @@ function App() {
 
   const handleAddPost = async (postFormData) => {
     const newPost = await postService.create(postFormData)
-    setPosts([newPost, ...posts])
+    setPosts((currentPosts) => [newPost, ...currentPosts])
     navigate('/posts')
   }
 
   const handleUpdatePost = async (postFormData) => {
     const updatedPost = await postService.update(postFormData)
-    setPosts(posts.map((post) => updatedPost._id === post._id ? updatedPost : post))
+    setPosts((currentPosts) => (
+      currentPosts.map((post) => updatedPost._id === post._id ? updatedPost : post)
+    ))
     navigate('/posts')
   }
 
   const handleDeletePost = async (postId) => {
-  const deletedPost = await postService.deletePost(postId)
-  setPosts(posts.filter(p => p._id !== deletedPost._id))
-	navigate('/posts')
+    const deletedPost = await postService.deletePost(postId)
+    setPosts((currentPosts) => currentPosts.filter((post) => post._id !== deletedPost._id))
+    navigate('/posts')
   }
 
   const handleUpdateProfile = async (profileFormData) => {
     const updatedProfile = await profileService.updateProfile(profileFormData)
-    console.log(updatedProfile);
-    setProfiles(profiles.map((profile) => updatedProfile._id === profile._id ? updatedProfile : profile))
     navigate(`/profiles/${updatedProfile._id}`)
   }
 
   const handleSendMessage = async (messageFormData) => {
     const newMessage = await messageService.createMessage(messageFormData)
-    setMessages([newMessage, ...messages])
-    // navigate('/inbox')
+    const updatedConversations = await convoService.allConvos()
+    setConversations(updatedConversations)
+    return newMessage
   }
 
   const handleCreateTrip = async (tripFormData) => {
-    const newTrip = await tripService.create(tripFormData)
-    setPosts([newTrip, ...trips])
+    const newTrip = await tripService.createTrip(tripFormData)
+    setTrips((currentTrips) => [newTrip, ...currentTrips])
     navigate('/trips')
+    return newTrip
   }
 
   useEffect(() => {
@@ -176,7 +167,12 @@ function App() {
           path="/posts/:postId"
           element={
             <ProtectedRoute user={user}>
-              <PostDetails user={user} handleDeletePost={handleDeletePost} handleSendMessage={handleSendMessage} />
+              <PostDetails
+                user={user}
+                handleCreateTrip={handleCreateTrip}
+                handleDeletePost={handleDeletePost}
+                handleSendMessage={handleSendMessage}
+              />
             </ProtectedRoute>
           }
         />
@@ -224,7 +220,7 @@ function App() {
           path="/conversations/:conversationId" 
           element={
             <ProtectedRoute user={user}>
-              <ConversationDetails handleSendMessage={handleSendMessage}/>
+              <ConversationDetails handleSendMessage={handleSendMessage} user={user} />
             </ProtectedRoute>
           } 
         />

@@ -1,61 +1,90 @@
-ul{
+.nav-container .nav-links {
   display: flex;
-  text-decoration: none;
   list-style: none;
-  display: flex;
   align-items: center;
-  gap: 3rem;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
 }
 
-li {
- display: flex;
-  margin: 20px;
-  padding: 0 20px;
+.nav-container .nav-links li {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-container .nav-links li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
   text-decoration: none;
-  color: white;
-  list-style-type: none;
-}
-
-ul li > a {
-  text-decoration: none;  
-  color: white;
-  font-size: 1.2rem;
+  font-size: 0.98rem;
   font-weight: 500;
   color: #f3f4f6;
   position: relative;
+  padding: 0.65rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
 }
-li > a:visited {
-  text-decoration: none;  
+
+.nav-container .nav-links li > a:visited {
   color: #f3f4f6;
   cursor: pointer;
   transition: 0.3s;
 }
 
-li > a:hover {
-  color: rgb(138,222,255);
-  opacity: 1;
+.nav-container .nav-links li > a:hover,
+.nav-container .nav-links li > a.active {
+  color: rgb(138, 222, 255);
+  background: rgba(138, 222, 255, 0.12);
 }
 
-
-ul li > a:after {
+.nav-container .nav-links li > a:after {
   content: '';
   display: block;
   width: 0;
   height: 2px;
-  background: rgb(138,222,255);
-  transition: width .3s;
+  background: rgb(138, 222, 255);
+  transition: width 0.3s;
 }
 
-ul li > a:hover::after {
+.nav-container .nav-links li > a:hover::after,
+.nav-container .nav-links li > a.active::after {
   width: 100%;
-  transition: width .3s;
 }
 
-#logo{
-  width: 90px;
+#logo {
+  width: 72px;
   height: auto;
 }
 
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-greeting {
+  margin: 0;
+  min-width: 0;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+}
+
 #hello-nav {
-  width: 200px;
+  width: auto;
+}
+
+@media (max-width: 900px) {
+  .nav-container .nav-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container .nav-links li > a {
+    width: 100%;
+    justify-content: center;
+  }
 }

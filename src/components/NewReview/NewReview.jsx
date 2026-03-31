@@ -11,24 +11,23 @@ const NewReview = (props) => {
   }
   
   const handleSubmit = (evt) => {
-  evt.preventDefault()
-  props.handleAddReview(formData)
-  setFormData({ review: '' })
-  console.log(formData)
-}
+    evt.preventDefault()
+    props.handleAddReview(formData)
+    setFormData({ review: '' })
+  }
 
-return (
-  <form onSubmit={handleSubmit}>
-    <label htmlFor="review">Review</label>
-    <textarea
-      required
-      name="review"
-      value={formData.review}
-      placeholder="Add a Review"
-      onChange={handleChange}
-    />
-    <button type="submit">Submit Review</button>
-  </form>
+  return (
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="review">Review</label>
+      <textarea
+        required
+        name="review"
+        value={formData.review}
+        placeholder="Add a Review"
+        onChange={handleChange}
+      />
+      <button type="submit">Submit Review</button>
+    </form>
   )
 }
   

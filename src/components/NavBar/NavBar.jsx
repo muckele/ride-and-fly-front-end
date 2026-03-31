@@ -10,10 +10,10 @@ import '../NavBar/NavBar.css'
 const NavBar = ({ user, handleLogout }) => {
   return (
     <nav className='nav-container'>
-      <NavLink to="/"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink><br/>
-      <p id ="hello-nav" >Hello, {user ? user.name : 'friend'}</p>
+      <NavLink to="/" className="nav-brand"><img src={logo} id="logo" alt="Ride & Fly Logo" /></NavLink>
+      <p id ="hello-nav" className="nav-greeting">Hello, {user ? user.name : 'friend'}</p>
       {user ?
-        <ul>
+        <ul className="nav-links">
           <li><NavLink to={`/profiles/${user.profile}`}><i className="ri-user-line"></i> Profile</NavLink></li>
           {/* <li><NavLink to="/profiles/:profileId">Profiles</NavLink></li> */}
           <li><NavLink to="/posts"><i className="ri-profile-line"></i> Posts</NavLink></li>
@@ -24,7 +24,7 @@ const NavBar = ({ user, handleLogout }) => {
           <li><NavLink to="" onClick={handleLogout}><i className="ri-login-box-line"></i> Log Out</NavLink></li>
         </ul>
       :
-        <ul>
+        <ul className="nav-links">
           <li><NavLink to="/auth/login"><i className="ri-user-5-line"></i> Log In</NavLink></li>
           <li><NavLink to="/auth/signup"><i className="ri-user-add-line"></i> Sign Up</NavLink></li>
         </ul>

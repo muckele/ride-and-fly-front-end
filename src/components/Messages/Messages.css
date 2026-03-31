@@ -1,0 +1,13 @@
+.messages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.messages-empty {
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: rgba(17, 24, 39, 0.55);
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+}

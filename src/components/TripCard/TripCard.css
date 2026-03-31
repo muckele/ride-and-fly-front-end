@@ -1,0 +1,11 @@
+.trip-card__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.trip-card__action-link {
+  color: #8ed0ff;
+  font-weight: 600;
+}

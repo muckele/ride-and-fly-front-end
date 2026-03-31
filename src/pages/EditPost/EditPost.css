@@ -1,7 +1,7 @@
-form {
+.editpost-container form {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 50px;
-  width: 500px;
+  width: min(100%, 540px);
 }
 
 .form-row {
@@ -11,32 +11,33 @@ form {
   margin: 10px;
 }
 
-.editpost-container{
+.editpost-container {
   height: 100%;
   display: flex;
   padding: 28px 21px;
   align-items: center;
   flex-direction: column;
-
 }
 
-.editpost-container input, textarea, select{ 
+.editpost-container input,
+.editpost-container textarea,
+.editpost-container select {
   width: 100%;
   padding: 14px;
   font-size: 14px;
   resize: vertical;
   border-radius: 5px;
-  margin: 7px 0px 14px 0px;
-  border: 3px solid rgb(138,222,255);
-  font-family:  sans-serif;
+  margin: 7px 0 14px;
+  border: 3px solid rgb(138, 222, 255);
+  font-family: sans-serif;
 }
 
 .editpost-container label {
   font-weight: 600;
-  margin: 7px 30px 20px 0px;
+  margin: 7px 30px 20px 0;
 }
 
-.editprofile-container button {
+.editpost-container button {
   display: inline-block;
   outline: 0;
   border: 0;

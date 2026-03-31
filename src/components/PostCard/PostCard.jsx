@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import './PostCard.css'
 
 const PostCard = ( {post} ) => {
+  const author = Array.isArray(post.author) ? post.author[0] : post.author
   const formattedDate = new Date(post.date).toLocaleDateString('en-us', {
     year: 'numeric',
     month: 'long',
@@ -16,7 +17,7 @@ const PostCard = ( {post} ) => {
         <Link to={`/posts/${post._id}`}>
       <div className='postcard-container'>
       <ul>
-        <li>Car Pal: {post.author[0].name}</li>
+        <li>Car Pal: {author?.name}</li>
         <li>Date: {formattedDate}</li>
         <li>Time: {post.time}</li>
         <li>Airport: {post.airport}</li>

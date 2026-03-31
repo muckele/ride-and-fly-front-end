@@ -1,14 +1,39 @@
 // npm modules
-import { useState } from "react"
-import { useLocation } from "react-router-dom"
+import { useEffect, useState } from "react"
+import { useLocation, useParams } from "react-router-dom"
+
+// services
+import * as postService from '../../services/postService'
 
 //css
 import './EditPost.css'
 
 const EditPost = (props) => {
   const { state } = useLocation()
-  const [formData, setFormData] = useState(state)
+  const { postId } = useParams()
+  const [formData, setFormData] = useState(state ?? null)
 
+  useEffect(() => {
+    const fetchPost = async () => {
+      if (state) {
+        setFormData({
+          ...state,
+          date: state.date ? new Date(state.date).toISOString().split('T')[0] : '',
+        })
+        return
+      }
+
+      const post = await postService.show(postId)
+      setFormData({
+        ...post,
+        date: post.date ? new Date(post.date).toISOString().split('T')[0] : '',
+      })
+    }
+
+    fetchPost()
+  }, [postId, state])
+
+  if (!formData) return <main className="editpost-container"><h1>Loading...</h1></main>
 
   
   const handleSubmit = (evt) => {

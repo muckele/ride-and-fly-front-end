@@ -1,9 +1,10 @@
-form {
+.newpost-container form {
   margin-top: 80px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   padding: 50px;
   border-radius: 5px;
   font-size: 1.1rem;
+  width: min(100%, 640px);
 }
 
 .form-row {
@@ -14,31 +15,32 @@ form {
   justify-content: center;
 }
 
-.newpost-container{
+.newpost-container {
   height: 100%;
   display: flex;
-  padding: 28px 21px;
+  padding: 2rem;
   align-items: center;
   flex-direction: column;
-  padding: 2rem;
   text-align: center;
 }
 
-.newpost-container input, textarea, select{ 
+.newpost-container input,
+.newpost-container textarea,
+.newpost-container select {
   width: 100%;
   padding: 0.5rem;
   font-size: 1rem;
   resize: vertical;
   border-radius: 5px;
-  margin: 7px 0px 14px 0px;
+  margin: 7px 0 14px;
   border: none;
   outline: none;
-  font-family:  sans-serif;
+  font-family: sans-serif;
 }
 
 .newpost-container label {
   font-weight: 600;
-  margin: 7px 30px 20px 0px;
+  margin: 7px 30px 20px 0;
 }
 
 .newpost-container button {
@@ -53,8 +55,5 @@ form {
   font-weight: 700;
   color: white;
   line-height: 26px;
-  margin-right: 100px;
+  margin-right: 0;
 }
-
-
-
