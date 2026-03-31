@@ -11,20 +11,52 @@ const PostCard = ( {post} ) => {
     month: 'long',
     day: 'numeric'
   })
+  const preferenceTags = [
+    post.oversizedLuggage && 'Oversized luggage',
+    post.travelingWithPet && 'Pet friendly',
+    post.luxuryCar && 'Luxury ride',
+    post.carType && post.carType.toUpperCase(),
+  ].filter(Boolean)
 
   return (
     <div className='outer-postcard-container'>
-        <Link to={`/posts/${post._id}`}>
-      <div className='postcard-container'>
-      <ul>
-        <li>Car Pal: {author?.name}</li>
-        <li>Date: {formattedDate}</li>
-        <li>Time: {post.time}</li>
-        <li>Airport: {post.airport}</li>
-        <li>Terminal: {post.terminal}</li>
-        <li>Dropoff: {post.dropOff} </li>
-      </ul>
-      </div>
+      <Link className='postcard-link' to={`/posts/${post._id}`}>
+        <article className='postcard-container'>
+          <div className='postcard-header'>
+            <div>
+              <p className='postcard-eyebrow'>Ride request</p>
+              <h2>{post.airport} to {post.dropOff}</h2>
+            </div>
+            <span className='postcard-badge'>{post.partySize} riders</span>
+          </div>
+
+          <div className='postcard-grid'>
+            <div className='postcard-meta'>
+              <span>Car pal</span>
+              <strong>{author?.name}</strong>
+            </div>
+            <div className='postcard-meta'>
+              <span>Date</span>
+              <strong>{formattedDate}</strong>
+            </div>
+            <div className='postcard-meta'>
+              <span>Time</span>
+              <strong>{post.time}</strong>
+            </div>
+            <div className='postcard-meta'>
+              <span>Terminal</span>
+              <strong>{post.terminal}</strong>
+            </div>
+          </div>
+
+          {preferenceTags.length ? (
+            <div className='postcard-tags'>
+              {preferenceTags.map(tag => (
+                <span key={tag} className='postcard-tag'>{tag}</span>
+              ))}
+            </div>
+          ) : null}
+        </article>
       </Link>
     </div>
   )

@@ -37,7 +37,13 @@ const NewPost = (props) => {
 
   return ( 
   <main className="newpost-container">
-    <form onSubmit={handleSubmit}>
+    <section className="newpost-shell">
+      <div className="newpost-header">
+        <p className="newpost-eyebrow">Create a ride request</p>
+        <h1>Post your airport trip</h1>
+        <p>Set the route, timing, and traveler preferences so the right car pal can find it fast.</p>
+      </div>
+      <form className="newpost-form" onSubmit={handleSubmit}>
         <div className="form-row">
         <label htmlFor="date-input">Date:</label>
         <input
@@ -112,7 +118,8 @@ const NewPost = (props) => {
           onChange={handleChange}
         />
         </div>
-        <label>
+        <div className="newpost-preferences">
+        <label className="toggle-field">
           Oversized Luggage:
           <input
             name="oversizedLuggage"
@@ -121,7 +128,7 @@ const NewPost = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="toggle-field">
           Traveling with a Pet:
           <input
             name="travelingWithPet"
@@ -130,7 +137,7 @@ const NewPost = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="toggle-field">
           Luxury Car:
           <input
             name="luxuryCar"
@@ -139,7 +146,7 @@ const NewPost = (props) => {
             onChange={handleChange}
           />
         </label>
-        <label>
+        <label className="newpost-select-field">
           Car Type:
           <select name="carType" value={formData.carType} onChange={handleChange}>
             <option value="">Select Car Type</option>
@@ -149,10 +156,12 @@ const NewPost = (props) => {
             <option value="luxury">Luxury</option>
           </select>
         </label>
+        </div>
         <div className="form-row">
-        <button type="submit">SUBMIT</button>
+        <button type="submit">Publish Post</button>
         </div>
       </form>
+    </section>
   </main>
   );
 }

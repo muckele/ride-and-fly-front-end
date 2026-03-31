@@ -1,0 +1,18 @@
+app = 'ride-and-fly-web-mathewu'
+primary_region = 'ewr'
+
+[build.args]
+  VITE_BACK_END_SERVER_URL = 'https://ride-and-fly-api-mathewu.fly.dev'
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ['app']
+
+[[vm]]
+  memory = '256mb'
+  cpu_kind = 'shared'
+  cpus = 1

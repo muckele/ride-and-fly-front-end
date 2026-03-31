@@ -47,6 +47,11 @@ const EditPost = (props) => {
   
   return (
     <main className="editpost-container">
+      <section className="editpost-shell">
+      <div className="editpost-header">
+        <p className="editpost-eyebrow">Update ride request</p>
+        <h1>Edit Post</h1>
+      </div>
       <form onSubmit={handleSubmit}>
       <div className="form-row">
         <label htmlFor="date-input">Date:</label>
@@ -123,6 +128,7 @@ const EditPost = (props) => {
         </div>
         <button type="submit">Update</button>
       </form>
+      </section>
     </main>
   )
 }

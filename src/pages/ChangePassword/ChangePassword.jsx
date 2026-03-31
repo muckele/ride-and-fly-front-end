@@ -40,12 +40,14 @@ const ChangePassword = ({ handleAuthEvt }) => {
   }
 
   return (
-    <main className={styles.container}>
+    <main className={styles.page}>
+      <section className={styles.shell}>
+      <p className={styles.eyebrow}>Account security</p>
       <h1>Change Password</h1>
       <p className={styles.message}>{message}</p>
       <form autoComplete="off" onSubmit={handleSubmit} className={styles.form}>
-        <div className='form-row'>
-        <label className={styles.label}>
+        <div className={styles.row}>
+        <label className={styles.field}>
           Current Password
           <input
             type="password"
@@ -56,8 +58,8 @@ const ChangePassword = ({ handleAuthEvt }) => {
         </label>
         </div>
 
-        <div className='form-row'>
-        <label className={styles.label}>
+        <div className={styles.row}>
+        <label className={styles.field}>
           New Password
           <input
             type="password"
@@ -68,8 +70,8 @@ const ChangePassword = ({ handleAuthEvt }) => {
         </label>
         </div>
         
-        <div className='form-row'>
-        <label className={styles.label}>
+        <div className={styles.row}>
+        <label className={styles.field}>
           Confirm New Password
           <input
             type="password"
@@ -80,13 +82,14 @@ const ChangePassword = ({ handleAuthEvt }) => {
         </label>
         </div>
         
-        <div>
+        <div className={styles.actions}>
           <Link to="/">Cancel</Link>
           <button className={styles.button} disabled={isFormInvalid()}>
             Change Password
           </button>
         </div>
       </form>
+      </section>
     </main>
   )
 }

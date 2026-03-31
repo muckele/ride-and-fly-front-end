@@ -1,12 +1,21 @@
-.Review-Card {
-  z-index: 1000;
+.review-card {
+  padding: 1rem 1.1rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.rc-container {
-  margin-top: 0;
-  width: min(100%, 500px);
-  padding: 0.85rem 1rem;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  background-color: rgba(51, 51, 51, 0.9);
-  border-radius: 16px;
+.review-card__text {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--text-main);
+}
+
+.reviews-empty {
+  margin: 0;
+  padding: 1.2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
 }

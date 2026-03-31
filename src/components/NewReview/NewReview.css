@@ -1,0 +1,8 @@
+.new-review-form {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.new-review-form button {
+  justify-self: flex-start;
+}

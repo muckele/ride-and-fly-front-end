@@ -1,8 +1,11 @@
 // components
 import ReviewCard from '../ReviewCard/ReviewCard'
+import './Reviews.css'
 
 const Reviews = (props) => {
-  if (!props.reviews?.length) return <h4>No Reviews</h4>
+  if (!props.reviews?.length) {
+    return <p className="reviews-empty">No reviews yet. Be the first to leave one after the ride.</p>
+  }
 
   return (
     <>

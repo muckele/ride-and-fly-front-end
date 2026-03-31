@@ -40,6 +40,8 @@ const EditProfile = (props) => {
 
   return (
     <main className='editprofile-container'>
+      <section className="editprofile-shell">
+      <p className="editprofile-eyebrow">Profile settings</p>
       <h1>Edit Profile</h1>
       <form autoComplete="off" onSubmit={handleSubmit}>
         <div className="form-row">
@@ -88,6 +90,7 @@ const EditProfile = (props) => {
           <button>Save Changes</button>
       
       </form>
+      </section>
     </main>
   
   )

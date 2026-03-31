@@ -1,0 +1,8 @@
+.reviews-empty {
+  margin: 0;
+  padding: 1.2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px dashed rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}

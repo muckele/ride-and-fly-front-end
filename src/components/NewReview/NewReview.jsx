@@ -17,7 +17,7 @@ const NewReview = (props) => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="new-review-form" onSubmit={handleSubmit}>
       <label htmlFor="review">Review</label>
       <textarea
         required

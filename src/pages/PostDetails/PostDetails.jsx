@@ -26,6 +26,12 @@ const PostDetails = (props) => {
         day: 'numeric',
       })
     : ''
+  const preferenceTags = [
+    post?.oversizedLuggage && 'Oversized luggage',
+    post?.travelingWithPet && 'Traveling with a pet',
+    post?.luxuryCar && 'Luxury ride requested',
+    post?.carType && `${post.carType.toUpperCase()} preferred`,
+  ].filter(Boolean)
   
   const handleChange = evt => {
     setMessageFormData({...messageFormData, [evt.target.name]: evt.target.value})
@@ -72,74 +78,127 @@ const PostDetails = (props) => {
   }, [postId])
 
 
-  if (!post) return <h1>Loading, please wait!</h1>
+  if (!post) {
+    return (
+      <main className="post-details-page post-loading">
+        <h1>Loading trip details...</h1>
+      </main>
+    )
+  }
 
   return (
-    <>
-    <div className="post-header">
-        <h1 id="detail-title" >{author?.name} looking for a carpal from {post.airport} to {post.dropOff}</h1>
-    </div
-    
-    >
-    <div className="post-details-container">
-      
-      <div className="box main-content">
-        <section className="post-content">
-          <div className="post-info">
-          {author?._id === props.user.profile &&
-            <Link to={`/posts/${postId}/edit`} state={post} ><i className="ri-pencil-line pd-p"></i>EDIT</Link> 
-          }
-              <p className="pd-p">Carpal: {author?.name}</p>
-              <p className="pd-p">Date: {formattedDate}</p>
-              <p className="pd-p">Time:{post.time}</p>
-              <p className="pd-p">Airport:{post.airport}</p>
-              <p className="pd-p">Terminal:{post.terminal}</p>
-              <p className="pd-p">Drop off:{post.dropOff}</p>
-              <p className="pd-p">Party size:{post.partySize}</p>
+    <main className="post-details-page">
+      <section className="post-hero">
+        <div className="post-hero-copy-wrap">
+          <p className="post-hero-eyebrow">Ride request</p>
+          <h1 id="detail-title">{author?.name} is heading from {post.airport} to {post.dropOff}</h1>
+          <p className="post-hero-copy">
+            {formattedDate} at {post.time} · Terminal {post.terminal} · Party of {post.partySize}
+          </p>
+        </div>
+
+        <div className="post-hero-actions">
+          {author?._id === props.user.profile ? (
+            <>
+              <Link className="post-action-link" to={`/posts/${postId}/edit`} state={post}>
+                <i className="ri-pencil-line"></i> Edit Post
+              </Link>
+              <button
+                type="button"
+                className="post-danger-action"
+                onClick={() => props.handleDeletePost(postId)}
+              >
+                <i className="ri-delete-bin-line"></i> Delete
+              </button>
+            </>
+          ) : (
+            <button type="button" className="post-primary-action" onClick={handleCreateTrip}>
+              <i className="ri-roadster-fill"></i> Confirm Ride Share
+            </button>
+          )}
+        </div>
+      </section>
+
+      <div className="post-details-container">
+        <aside className="post-summary-card">
+          <p className="post-card-eyebrow">Trip Snapshot</p>
+          <div className="post-summary-grid">
+            <div className="summary-row">
+              <span className="summary-label">Car pal</span>
+              <strong className="summary-value">{author?.name}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Date</span>
+              <strong className="summary-value">{formattedDate}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Time</span>
+              <strong className="summary-value">{post.time}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Airport</span>
+              <strong className="summary-value">{post.airport}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Terminal</span>
+              <strong className="summary-value">{post.terminal}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Dropoff</span>
+              <strong className="summary-value">{post.dropOff}</strong>
+            </div>
+            <div className="summary-row">
+              <span className="summary-label">Party size</span>
+              <strong className="summary-value">{post.partySize}</strong>
+            </div>
           </div>
-        {author?._id === props.user.profile &&
-          <div className="post-actions">
-              
-              <button id="pd-delete-button" onClick={() => props.handleDeletePost(postId)}><i className="ri-delete-bin-line"></i>  Delete</button>
-          </div>
-        }
-        {author?._id !== props.user.profile && (
-          <div className="create-trip-section">
-            <button onClick={handleCreateTrip}>Confirm Ride Share</button>
-          </div> 
-        )}
+
+          {preferenceTags.length ? (
+            <div className="post-preferences">
+              {preferenceTags.map(tag => (
+                <span key={tag} className="preference-chip">{tag}</span>
+              ))}
+            </div>
+          ) : (
+            <p className="post-summary-note">No special travel preferences were added for this ride.</p>
+          )}
+        </aside>
+
+        <section className="post-detail-stack">
+          <section className="post-panel message-pt">
+            <div className="panel-header">
+              <p className="panel-eyebrow">Messaging</p>
+              <h2>Start the conversation</h2>
+              <p>Send a quick note before confirming the trip details together.</p>
+            </div>
+            <form className="post-message-form" onSubmit={handleSubmit}>
+              <label htmlFor="text-input">Message</label>
+              <textarea
+                required
+                name="text"
+                id="text-input"
+                value={messageFormData.text}
+                placeholder={`Send ${author?.name} a quick message`}
+                onChange={handleChange}
+              />
+              <button>Send Message</button>
+            </form>
+          </section>
+
+          <section className="post-panel reviews-pt">
+            <div className="panel-header">
+              <p className="panel-eyebrow">Reviews</p>
+              <h2>Past ride feedback</h2>
+              <p>Leave context for future car pals and learn what the ride was like.</p>
+            </div>
+            <NewReview handleAddReview={handleAddReview} />
+            <div className="reviews-list">
+              <Reviews reviews={post.reviews} user={props.user}/>
+            </div>
+          </section>
         </section>
       </div>
-
-
-
-      <div className="box content-row">
-        <div className="message-pt">
-        <section >
-          <form  onSubmit={handleSubmit}>
-            <label htmlFor="text-input"><i className="ri-chat-smile-2-line"></i>  Send A Message:</label>
-            <textarea
-              required
-              type="text"
-              name="text"
-              id="text-input"
-              value={messageFormData.text}
-              onChange={handleChange}
-              />
-            <button>Send Message</button>
-          </form>
-        </section></div>
-      
-  
-      <div className="reviews-pt">
-      <section >
-        
-        <NewReview handleAddReview={handleAddReview} />
-        <Reviews reviews={post.reviews} user={props.user}/>
-      </section>  </div></div>
-    
-  </div>
-  </>
+    </main>
   )
 }
 

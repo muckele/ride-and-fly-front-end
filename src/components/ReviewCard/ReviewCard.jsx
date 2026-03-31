@@ -5,10 +5,9 @@ import './ReviewCard.css'
 
 const ReviewCard = ({ review }) => {
   return (
-    <div className="rc-container">
-    <span className='Review-Card'>
-      {review.review}
-    </span></div>
+    <article className="review-card">
+      <p className='review-card__text'>{review.review}</p>
+    </article>
   )
 }
 
